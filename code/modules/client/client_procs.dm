@@ -214,6 +214,8 @@ var/next_external_rsc = 0
 
 	check_ip_intel()
 
+	check_multilog()
+
 	send_resources()
 
 	if(!void)
@@ -418,6 +420,11 @@ var/next_external_rsc = 0
 			message_admins("<span class='adminnotice'>Proxy Detection: [key_name_admin(src)] IP intel rated [res.intel*100]% likely to be a Proxy/VPN.</span>")
 		ip_intel = res.intel
 
+/client/proc/check_multilog()
+	if(related_accounts_cid && (related_accounts_cid != "Requires database"))
+		message_admins("<span class='adminnotice'>Multilog Warning: [key_name_admin(src)] CID matches these other ckeys: [related_accounts_cid]</span>")
+	if(related_accounts_ip && (related_accounts_ip != "Requires database"))
+		message_admins("<span class='adminnotice'>Multilog Warning: [key_name_admin(src)] IP matches these other ckeys: [related_accounts_ip]</span>")
 
 /client/proc/add_verbs_from_config()
 	if(config.see_own_notes)

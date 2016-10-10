@@ -56,7 +56,8 @@ var/list/icons_to_ignore_at_floor_init = list("damaged1","damaged2","damaged3","
 		if(2)
 			switch(pick(1,2;75,3))
 				if(1)
-					src.ReplaceWithLattice()
+					if(istype(baseturf, /turf/open/space)) //So we don't have lattices that aren't on space turfs
+						src.ReplaceWithLattice()
 					if(prob(33)) new /obj/item/stack/sheet/metal(src)
 				if(2)
 					src.ChangeTurf(src.baseturf)
@@ -164,7 +165,8 @@ var/list/icons_to_ignore_at_floor_init = list("damaged1","damaged2","damaged3","
 				PoolOrNew(floor_tile, src)
 				make_plating()
 		else if(prob(50))
-			ReplaceWithLattice()
+			if(istype(baseturf, /turf/open/space))
+				ReplaceWithLattice()
 
 /turf/open/floor/narsie_act()
 	if(prob(20))

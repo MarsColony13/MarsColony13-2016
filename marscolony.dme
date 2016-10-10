@@ -14,7 +14,7 @@
 
 // BEGIN_INCLUDE
 #include "_maps\__MAP_DEFINES.dm"
-#include "_maps\tgstation2.dm"
+#include "_maps\mars.dm"
 #include "code\_compile_options.dm"
 #include "code\hub.dm"
 #include "code\world.dm"
@@ -1262,6 +1262,8 @@
 #include "code\modules\library\lib_readme.dm"
 #include "code\modules\library\random_books.dm"
 #include "code\modules\lighting\lighting_system.dm"
+#include "code\modules\mars\mars_areas.dm"
+#include "code\modules\mars\mars_turfs.dm"
 #include "code\modules\mining\abandoned_crates.dm"
 #include "code\modules\mining\equipment.dm"
 #include "code\modules\mining\fulton.dm"

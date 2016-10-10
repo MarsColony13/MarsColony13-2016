@@ -12,6 +12,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 	typepath = /datum/round_event/immovable_rod
 	min_players = 15
 	max_occurrences = 5
+	weight = 0
 
 /datum/round_event/immovable_rod
 	announceWhen = 5

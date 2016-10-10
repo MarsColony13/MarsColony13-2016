@@ -11,6 +11,7 @@
         #define MAP_FILE "mars.dmm"
         #define MAP_NAME "Mars Colony"
 
+		#define MAP_TRANSITION_CONFIG list(MAIN_STATION = SELFLOOPING, CENTCOMM = SELFLOOPING)
 
 #elif !defined(MAP_OVERRIDE)
 

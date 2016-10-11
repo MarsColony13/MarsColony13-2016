@@ -1,2 +1,4 @@
 Badmin
 <span class='adminooc'>Spanmin</span>
+Sadmin
+NotAnAdmin

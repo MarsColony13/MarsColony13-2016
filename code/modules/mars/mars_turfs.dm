@@ -3,7 +3,7 @@
 	name = "\proper sand"
 	var/environment_type = "marssand"
 	icon_state = "marssand0"
-	initial_gas_mix = "co2=1.425;o2=0.015;n2=0.06;TEMP=213.15"//95% CO2, 1% oxygen, 4% N2, -60C, 213.16K
+	initial_gas_mix = "co2=1.425;o2=0.015;n2=0.06;TEMP=203.15"//95% CO2, 1% oxygen, 4% N2, -70C, 203.15K
 	planetary_atmos = TRUE
 	baseturf = /turf/open/floor/plating/mars
 	temperature = 213.15
@@ -15,6 +15,23 @@
 	name = proper_name
 	if(prob(floor_variance))
 		icon_state = "[environment_type][rand(0,12)]"
+
+/turf/open/floor/plating/mars/polar
+	name = "\proper icy sand"
+	desc = "You can just make out some small particles of ice in this sand."
+	baseturf = /turf/open/floor/plating/mars/polar
+	environment_type = "marssand"
+	icon_state = "marssand0"
+	initial_gas_mix = "co2=1.425;o2=0.015;n2=0.06;TEMP=120"//95% CO2, 1% oxygen, 4% N2, -153C, 120K
+
+/turf/open/floor/plating/mars/polar/snow
+	name = "\proper snow"
+	desc = null
+	baseturf = /turf/open/floor/plating/mars/polar/snow
+	initial_gas_mix = "co2=1.425;o2=0.015;n2=0.06;TEMP=120"//95% CO2, 1% oxygen, 4% N2, -153C, 120K
+	icon_state = "snow"
+	icon = 'icons/turf/snow.dmi'
+	environment_type = "snow"
 
 /turf/open/floor/plating/mars/break_tile()
 	return

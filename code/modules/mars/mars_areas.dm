@@ -3,6 +3,7 @@
 	icon_state = "mars"
 	has_gravity = 1
 
+//Default map area(instead of space):
 /area/mars/surface
 	name = "Mars"
 	icon_state = "explored"
@@ -21,7 +22,7 @@
 	name = "Mars Colony"
 	icon_state = "colony"
 
-/area/mars/colony/arrival_pod
+/area/shuttle/arrival_pod
 	name = "Arrival Drop Pod"
 	requires_power = 0
 	luminosity = 1
@@ -29,3 +30,24 @@
 	has_gravity = 1
 	valid_territory = 0
 	icon_state = "shuttle"
+
+//Hallways
+/area/mars/colony/hallway/central
+	name = "Central Hallway"
+	icon_state = "hallC"
+
+/area/mars/colony/hallway/hab
+	name = "Habitation Hallway"
+	icon_state = "hallF"
+
+/area/mars/colony/hallway/medsci
+	name = "Medsci Hallway"
+	icon_state = "hallS"
+
+/area/mars/colony/hallway/eng
+	name = "Engineering Hallway"
+	icon_state = "hallA"
+
+/area/mars/colony/hallway/command
+	name = "Colony Administration Hallway"
+	icon_state = "hallP"

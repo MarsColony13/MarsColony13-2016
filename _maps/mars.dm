@@ -2,7 +2,7 @@
 
 		#define TITLESCREEN "title" //Add an image in misc/fullscreen.dmi, and set this define to the icon_state, to set a custom titlescreen for your map
 
-		#define MINETYPE "mars"
+		#define MINETYPE "polar"
 
         #include "map_files\Mars\mars.dmm"
         #include "map_files\generic\z2.dmm"

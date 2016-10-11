@@ -1,6 +1,6 @@
 //Mars Surface Turfs
 /turf/open/floor/plating/mars
-	name = "sand"
+	name = "\proper sand"
 	var/environment_type = "marssand"
 	icon_state = "marssand0"
 	initial_gas_mix = "co2=1.425;o2=0.015;n2=0.06;TEMP=213.15"//95% CO2, 1% oxygen, 4% N2, -60C, 213.16K

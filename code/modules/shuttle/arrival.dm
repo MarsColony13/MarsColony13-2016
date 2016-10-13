@@ -7,4 +7,4 @@
 	height = 15
 	dir = NORTH
 	port_angle = 0
-	roundstart_move = "arrival_away"
+	roundstart_move = "arrival_mars"

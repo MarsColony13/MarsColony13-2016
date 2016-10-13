@@ -12,6 +12,8 @@ var/const/ATMOSTECH			=(1<<7)
 var/const/ROBOTICIST		=(1<<8)
 var/const/AI				=(1<<9)
 var/const/CYBORG			=(1<<10)
+var/const/MARSHAL			=(1<<11)
+var/const/SHERIFF			=(1<<11)
 
 
 var/const/MEDSCI			=(1<<1)

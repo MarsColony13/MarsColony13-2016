@@ -8,6 +8,7 @@
 	name = "Mars"
 	icon_state = "explored"
 	music = null
+	valid_territory = 0
 	always_unpowered = 1
 	requires_power = 1
 	poweralm = 0
@@ -18,10 +19,7 @@
 	ambientsounds = list('sound/ambience/ambimine.ogg')
 	flags = NONE
 
-/area/mars/colony
-	name = "Mars Colony"
-	icon_state = "colony"
-
+//Shuttles
 /area/shuttle/arrival_pod
 	name = "Arrival Drop Pod"
 	requires_power = 0
@@ -30,6 +28,10 @@
 	has_gravity = 1
 	valid_territory = 0
 	icon_state = "shuttle"
+
+/area/mars/colony
+	name = "Mars Colony"
+	icon_state = "colony"
 
 //Hallways
 /area/mars/colony/hallway/central
@@ -51,3 +53,7 @@
 /area/mars/colony/hallway/command
 	name = "Colony Administration Hallway"
 	icon_state = "hallP"
+
+//Maintenance
+/area/mars/colony/maint
+	valid_territory = 0

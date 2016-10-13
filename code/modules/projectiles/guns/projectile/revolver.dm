@@ -34,7 +34,9 @@
 		A.update_icon()
 		update_icon()
 		chamber_round(0)
+		if(istype(A, /obj/item/ammo_box/sloader))							//If it's a speedloader, make one sound.
 			playsound(src, 'sound/weapons/effects/magload.ogg', 100, 0, 1)
+		else																//Else, load them individually.
 			playloadsound(num_loaded)
 
 	if(unique_rename)

@@ -14,6 +14,20 @@
 	max_ammo = 6
 	multiple_sprites = 1
 
+/obj/item/ammo_box/sloader/c45
+	name = "speed loader (.45)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "sl45"
+	ammo_type = /obj/item/ammo_casing/c45
+	max_ammo = 6
+	multiple_sprites = 1
+	slot_flags = null
+
+/obj/item/ammo_box/sloader/c45/rubber
+	name = "speed loader (rubber tipped .45)"
+	icon_state = "38"
+	ammo_type = /obj/item/ammo_casing/c45/rubber
+
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
 	icon_state = "9mmbox"

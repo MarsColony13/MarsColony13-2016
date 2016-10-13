@@ -78,6 +78,7 @@
 	var/multiple_sprites = 0
 	var/caliber
 	var/multiload = 1
+	var/typeflag //SPEEDLOADER or MAGAZINE, check combat.dm for other defines
 
 /obj/item/ammo_box/New()
 	..()

@@ -34,10 +34,18 @@
 		A.update_icon()
 		update_icon()
 		chamber_round(0)
+			playsound(src, 'sound/weapons/effects/magload.ogg', 100, 0, 1)
+			playloadsound(num_loaded)
 
 	if(unique_rename)
 		if(istype(A, /obj/item/weapon/pen))
 			rename_weapon(user)
+
+/obj/item/weapon/gun/projectile/revolver/proc/playloadsound(var/rounds)
+	if(rounds > 0)
+		playsound(get_turf(src), 'sound/weapons/effects/chamber.ogg', 100, -1, 0)
+		rounds = rounds - 1
+		addtimer(src, "playloadsound", rand(100,200), FALSE, rounds)
 
 /obj/item/weapon/gun/projectile/revolver/attack_self(mob/living/user)
 	var/num_unloaded = 0
@@ -70,6 +78,7 @@
 		C.spin()
 		chamber_round(0)
 		usr.visible_message("[usr] spins [src]'s chamber.", "<span class='notice'>You spin [src]'s chamber.</span>")
+		playsound(get_turf(src), 'sound/weapons/effects/revolverSpin.ogg', 100)
 	else
 		verbs -= /obj/item/weapon/gun/projectile/revolver/verb/spin
 
@@ -371,3 +380,11 @@
 		new /obj/item/stack/cable_coil(get_turf(src), 10)
 		slung = 0
 		update_icon()
+
+/obj/item/weapon/gun/projectile/revolver/peacemaker
+	name = "peacemaker"
+	desc = "A revolver dating back to 1873. This updated model has been refitted to use standard .45 caliber rounds."
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/fortyfive
+	w_class = 3
+	slot_flags = 0
+	icon_state = "1873"

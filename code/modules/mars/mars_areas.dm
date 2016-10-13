@@ -6,7 +6,7 @@
 //Default map area(instead of space):
 /area/mars/surface
 	name = "Mars"
-	icon_state = "explored"
+	icon_state = "mars"
 	music = null
 	valid_territory = 0
 	always_unpowered = 1
@@ -39,21 +39,29 @@
 	icon_state = "hallC"
 
 /area/mars/colony/hallway/hab
-	name = "Habitation Hallway"
+	name = "Habitation Wing Hallway"
 	icon_state = "hallF"
 
 /area/mars/colony/hallway/medsci
-	name = "Medsci Hallway"
+	name = "Medsci Wing Hallway"
 	icon_state = "hallS"
 
 /area/mars/colony/hallway/eng
-	name = "Engineering Hallway"
+	name = "Engineering Wing Hallway"
 	icon_state = "hallA"
 
 /area/mars/colony/hallway/command
-	name = "Colony Administration Hallway"
+	name = "Colony Administration Wing Hallway"
 	icon_state = "hallP"
 
 //Maintenance
 /area/mars/colony/maint
+	ambientsounds = list('sound/ambience/ambimaint1.ogg',
+						 'sound/ambience/ambimaint2.ogg',
+						 'sound/ambience/ambimaint3.ogg',
+						 'sound/ambience/ambimaint4.ogg',
+						 'sound/ambience/ambimaint5.ogg',
+						 'sound/voice/lowHiss2.ogg', //Xeno Breathing Hisses, Hahahaha I'm not even sorry.
+						 'sound/voice/lowHiss3.ogg',
+						 'sound/voice/lowHiss4.ogg')
 	valid_territory = 0

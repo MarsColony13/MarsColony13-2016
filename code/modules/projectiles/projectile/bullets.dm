@@ -64,6 +64,20 @@
 	damage = 20
 	stamina = 65 //two round bursts from the c20r knocks people down
 
+/obj/item/projectile/bullet/fortyfive
+	damage = 30
+
+/obj/item/projectile/bullet/fortyfive/hollow
+	damage = 40
+	armour_penetration = -75
+
+/obj/item/projectile/bullet/fortyfive/ap
+	damage = 20
+	armour_penetration = 75
+
+/obj/item/projectile/bullet/fortyfive/rubber
+	damage = 5
+	stamina = 75
 
 /obj/item/projectile/bullet/midbullet2
 	damage = 25

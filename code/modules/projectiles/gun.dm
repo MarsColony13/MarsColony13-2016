@@ -77,7 +77,7 @@
 		G.loc = loc
 		qdel(G.pin)
 		G.pin = null
-		visible_message("[G] can now fit a new pin, but old one was destroyed in the process.")
+		visible_message("[G] can now fit a new pin, but the old one was destroyed in the process.")
 		qdel(src)
 
 /obj/item/weapon/gun/examine(mob/user)

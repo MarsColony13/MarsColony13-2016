@@ -1,11 +1,16 @@
 /obj/item/weapon/gun/energy/taser
 	name = "taser gun"
-	desc = "A low-capacity, energy-based stun gun used by security teams to subdue targets at range."
+	desc = "A small, basic, but rechargable taser with a single shot. STOP RESISTING!"
 	icon_state = "taser"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode)
+	cell_type = /obj/item/weapon/stock_parts/cell/taser
 	origin_tech = "combat=3"
-	ammo_x_offset = 3
+	w_class = 2
+	ammo_x_offset = 2
+	flight_x_offset = 15
+	flight_y_offset = 9
+	can_flashlight = 1
 
 /obj/item/weapon/gun/energy/tesla_revolver
 	name = "tesla gun"

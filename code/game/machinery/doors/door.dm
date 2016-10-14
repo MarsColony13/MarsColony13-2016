@@ -29,6 +29,7 @@
 	var/assemblytype //the type of door frame to drop during deconstruction
 	var/auto_close //TO BE REMOVED, no longer used, it's just preventing a runtime with a map var edit.
 	var/datum/effect_system/spark_spread/spark_system
+	var/damage_deflection = 10
 
 /obj/machinery/door/New()
 	..()
@@ -160,7 +161,7 @@ obj/machinery/door/proc/try_to_crowbar(obj/item/I, mob/user)
 		return ..()
 
 /obj/machinery/door/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
-	if(damage_flag == "melee" && damage_amount < 10)
+	if(damage_flag == "melee" && damage_amount < damage_deflection)
 		return 0
 	. = ..()
 

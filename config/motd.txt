@@ -1,1 +1,1 @@
-<h1 style="color:red;">Mars Colony 13</h1>
+<font size = 6; style="color:#FF5900;"><b>Mars Colony 13</b></font>

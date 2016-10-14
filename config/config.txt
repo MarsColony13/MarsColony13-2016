@@ -156,7 +156,7 @@ WIKIURL http://www.tgstation13.org/wiki
 # RULESURL http://www.tgstation13.org/wiki/Rules
 
 ##Github address
-GITHUBURL https://github.com/TalkingCactus/MarsColony13
+GITHUBURL https://github.com/MarsColony13/MarsColony13
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
 # BANAPPEALS http://justanotherday.example.com

@@ -164,11 +164,11 @@
 	rating = 2
 
 /obj/item/weapon/stock_parts/cell/taser
-	name = "\improper Nanotrasen brand rechargable 9V battery"
-	desc = "A power cell designed to deliver a large shock in the form of a taser bolt. You probably shouldn't even have this."
+	name = "\improper Floor-Mart brand rechargable 9V battery"
+	desc = "This thing is absolutely awful."
 	maxcharge = 200
 	charge = 200
-	chargerate = 50 //Relatively fast for the small maximum.
+	chargerate = 100 //Relatively fast for the small maximum.
 	materials = list(MAT_GLASS=40)
 	rating = 1
 

@@ -409,10 +409,42 @@
 
 /datum/design/c38
 	name = "Speed loader (.38)"
-	id = "c38"
+	id = "slc38"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 30000)
-	build_path = /obj/item/ammo_box/c38
+	build_path = /obj/item/ammo_box/sloader/c38
+	category = list("initial", "Security")
+
+/datum/design/slc45
+	name = "Speed loader (.45)"
+	id = "slc45"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 30000)
+	build_path = /obj/item/ammo_box/sloader/c45
+	category = list("initial", "Security")
+
+/datum/design/slc45rubber
+	name = "Speed loader (rubber tipped .45)"
+	id = "slc45rubber"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 30000)
+	build_path = /obj/item/ammo_box/sloader/c45/rubber
+	category = list("initial", "Security")
+
+/datum/design/slc45hollow
+	name = "Speed loader (hollow point .45)"
+	id = "slc45hollow"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 30000)
+	build_path = /obj/item/ammo_box/sloader/c45/hollow
+	category = list("initial", "Security")
+
+/datum/design/slc45ap
+	name = "Speed loader (armor piercing .45)"
+	id = "slc45ap"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 30000)
+	build_path = /obj/item/ammo_box/sloader/c45/ap
 	category = list("initial", "Security")
 
 /datum/design/recorder
@@ -632,12 +664,12 @@
 	build_path = /obj/item/ammo_casing/shotgun/incendiary
 	category = list("hacked", "Security")
 
-/datum/design/a357
-	name = "Ammo box (.357)"
+/datum/design/sla357
+	name = "Speed loader (.357)"
 	id = "a357"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 30000)
-	build_path = /obj/item/ammo_box/a357
+	build_path = /obj/item/ammo_box/sloader/a357
 	category = list("hacked", "Security")
 
 /datum/design/c10mm

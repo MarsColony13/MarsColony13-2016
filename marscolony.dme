@@ -1252,6 +1252,7 @@
 #include "code\modules\jobs\job_types\engineering.dm"
 #include "code\modules\jobs\job_types\job.dm"
 #include "code\modules\jobs\job_types\mars_civilian.dm"
+#include "code\modules\jobs\job_types\mars_command.dm"
 #include "code\modules\jobs\job_types\mars_engineering.dm"
 #include "code\modules\jobs\job_types\mars_medical.dm"
 #include "code\modules\jobs\job_types\mars_security.dm"

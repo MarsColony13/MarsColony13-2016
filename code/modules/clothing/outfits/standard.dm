@@ -166,7 +166,7 @@
 		sec_briefcase.handle_item_insertion(new /obj/item/stack/spacecash/c1000,1)
 	sec_briefcase.handle_item_insertion(new /obj/item/weapon/gun/energy/kinetic_accelerator/crossbow,1)
 	sec_briefcase.handle_item_insertion(new /obj/item/weapon/gun/projectile/revolver/mateba,1)
-	sec_briefcase.handle_item_insertion(new /obj/item/ammo_box/a357,1)
+	sec_briefcase.handle_item_insertion(new /obj/item/ammo_box/sloader/a357,1)
 	sec_briefcase.handle_item_insertion(new /obj/item/weapon/grenade/plastic/x4,1)
 
 	var/obj/item/device/pda/heads/pda = H.belt
@@ -193,7 +193,7 @@
 	head = /obj/item/clothing/head/centhat
 	belt = /obj/item/weapon/gun/projectile/revolver/mateba
 	r_pocket = /obj/item/weapon/lighter
-	l_pocket = /obj/item/ammo_box/a357
+	l_pocket = /obj/item/ammo_box/sloader/a357
 	back = /obj/item/weapon/storage/backpack/satchel/leather
 	id = /obj/item/weapon/card/id
 
@@ -343,7 +343,7 @@
 	ears = /obj/item/device/radio/headset/headset_cent/alt
 
 	backpack_contents = list(/obj/item/weapon/storage/box=1,\
-		/obj/item/ammo_box/a357=1,\
+		/obj/item/ammo_box/sloader/a357=1,\
 		/obj/item/weapon/storage/firstaid/regular=1,\
 		/obj/item/weapon/storage/box/flashbangs=1,\
 		/obj/item/device/flashlight=1,\

@@ -55,10 +55,10 @@ Cargo Technician
 
 
 /*
-Shaft Miner
+Miner
 */
 /datum/job/mining
-	title = "Shaft Miner"
+	title = "Miner"
 	flag = MINER
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
@@ -74,7 +74,7 @@ Shaft Miner
 	minimal_access = list(access_mining, access_mining_station, access_mailsorting, access_mineral_storeroom)
 
 /datum/outfit/job/miner
-	name = "Shaft Miner"
+	name = "Miner"
 
 	belt = /obj/item/device/pda/shaftminer
 	ears = /obj/item/device/radio/headset/headset_cargo/mining

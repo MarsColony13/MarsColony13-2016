@@ -47,7 +47,7 @@
 	if(rounds > 0)
 		playsound(get_turf(src), 'sound/weapons/effects/chamber.ogg', 100, -1, 0)
 		rounds = rounds - 1
-		addtimer(src, "playloadsound", rand(100,200), FALSE, rounds)
+		addtimer(src, "playloadsound", 5, FALSE, rounds)
 
 /obj/item/weapon/gun/projectile/revolver/attack_self(mob/living/user)
 	var/num_unloaded = 0
@@ -385,8 +385,8 @@
 
 /obj/item/weapon/gun/projectile/revolver/peacemaker
 	name = "peacemaker"
-	desc = "A revolver dating back to 1873. This updated model has been refitted to use standard .45 caliber rounds."
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/fortyfive
+	desc = "This modern reproduction of a classic single action revolver uses standard .45 caliber rounds. Features a six shot revolving cylinder."
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/c45
 	w_class = 3
 	slot_flags = 0
 	icon_state = "1873"

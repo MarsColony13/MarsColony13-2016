@@ -16,7 +16,7 @@
 	power_equip = 0
 	power_light = 0
 	outdoors = 1
-	ambientsounds = list('sound/ambience/ambimine.ogg')
+	ambientsounds = list('sound/ambience/ambimars1.ogg')
 	flags = NONE
 
 //Shuttles
@@ -40,7 +40,7 @@
 
 /area/mars/colony/hallway/hab
 	name = "Habitation Wing Hallway"
-	icon_state = "hallF"
+	icon_state = "hallP"
 
 /area/mars/colony/hallway/medsci
 	name = "Medsci Wing Hallway"
@@ -52,7 +52,7 @@
 
 /area/mars/colony/hallway/command
 	name = "Colony Administration Wing Hallway"
-	icon_state = "hallP"
+	icon_state = "hallF"
 
 //Maintenance
 /area/mars/colony/maint

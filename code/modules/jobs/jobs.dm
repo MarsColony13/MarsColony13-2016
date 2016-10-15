@@ -13,7 +13,8 @@ var/const/ROBOTICIST		=(1<<8)
 var/const/AI				=(1<<9)
 var/const/CYBORG			=(1<<10)
 var/const/MARSHAL			=(1<<11)
-var/const/SHERIFF			=(1<<11)
+var/const/SHERIFF			=(1<<12)
+var/const/DIRECTOR			=(1<<13)
 
 
 var/const/MEDSCI			=(1<<1)
@@ -43,6 +44,7 @@ var/const/CHAPLAIN			=(1<<10)
 var/const/CLOWN				=(1<<11)
 var/const/MIME				=(1<<12)
 var/const/ASSISTANT			=(1<<13)
+var/const/COLONIST			=(1<<14)
 
 
 var/list/assistant_occupations = list(
@@ -56,9 +58,9 @@ var/list/assistant_occupations = list(
 
 
 var/list/command_positions = list(
-	"Captain",
+	"Colony Director",
 	"Head of Personnel",
-	"Head of Security",
+	"Marshal",
 	"Chief Engineer",
 	"Research Director",
 	"Chief Medical Officer"
@@ -67,7 +69,7 @@ var/list/command_positions = list(
 
 var/list/engineering_positions = list(
 	"Chief Engineer",
-	"Station Engineer",
+	"Engineer",
 	"Atmospheric Technician",
 )
 
@@ -75,7 +77,7 @@ var/list/engineering_positions = list(
 var/list/medical_positions = list(
 	"Chief Medical Officer",
 	"Medical Doctor",
-	"Geneticist",
+//	"Geneticist", //not so sure about this
 	"Virologist",
 	"Chemist"
 )
@@ -92,7 +94,7 @@ var/list/supply_positions = list(
 	"Head of Personnel",
 	"Quartermaster",
 	"Cargo Technician",
-	"Shaft Miner",
+	"Miner",
 )
 
 
@@ -102,19 +104,13 @@ var/list/civilian_positions = list(
 	"Cook",
 	"Janitor",
 	"Librarian",
-	"Lawyer",
-	"Chaplain",
-	"Clown",
-	"Mime",
-	"Assistant"
+	"Colonist"
 )
 
 
 var/list/security_positions = list(
-	"Head of Security",
-	"Warden",
-	"Detective",
-	"Security Officer"
+	"Marshal",
+	"Sheriff"
 )
 
 

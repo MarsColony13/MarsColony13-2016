@@ -70,22 +70,22 @@
 /obj/item/ammo_casing/c45
 	desc = "A .45 bullet casing."
 	caliber = ".45"
-	projectile_type = /obj/item/projectile/bullet/fortyfive
+	projectile_type = /obj/item/projectile/bullet/c45
 
 /obj/item/ammo_casing/c45/hollow
 	desc = "A hollow point .45 bullet casing."
 	caliber = ".45"
-	projectile_type = /obj/item/projectile/bullet/fortyfive/hollow
+	projectile_type = /obj/item/projectile/bullet/c45/hollow
 
 /obj/item/ammo_casing/c45/ap
 	desc = "An armor piercing .45 bullet casing."
 	caliber = ".45"
-	projectile_type = /obj/item/projectile/bullet/fortyfive/ap
+	projectile_type = /obj/item/projectile/bullet/c45/ap
 
 /obj/item/ammo_casing/c45/rubber
 	desc = "A rubber tipped .45 bullet casing."
 	caliber = ".45"
-	projectile_type = /obj/item/projectile/bullet/fortyfive/rubber
+	projectile_type = /obj/item/projectile/bullet/c45/rubber
 
 /obj/item/ammo_casing/c45nostamina
 	desc = "A .45 bullet casing."

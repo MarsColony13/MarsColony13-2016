@@ -49,8 +49,8 @@
 
 		if("guns") // 28 tc now
 			new /obj/item/weapon/gun/projectile/revolver(src)
-			new /obj/item/ammo_box/a357(src)
-			new /obj/item/ammo_box/a357(src)
+			new /obj/item/ammo_box/sloader/a357(src)
+			new /obj/item/ammo_box/sloader/a357(src)
 			new /obj/item/weapon/card/emag(src)
 			new /obj/item/weapon/grenade/plastic/c4(src)
 			new /obj/item/clothing/gloves/color/latex/nitrile(src)
@@ -131,7 +131,7 @@
 			new /obj/item/weapon/grenade/plastic/c4 (src) // 1 tc
 			new /obj/item/weapon/card/emag(src) // 6 tc
 			return
-		
+
 		if("ninja") // 33 tc worth
 			new /obj/item/weapon/katana(src) // Unique , hard to tell how much tc this is worth. 8 tc?
 			new /obj/item/weapon/implanter/adrenalin(src) // 8 tc

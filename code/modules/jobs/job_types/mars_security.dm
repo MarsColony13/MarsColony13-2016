@@ -59,7 +59,7 @@
 	outfit = /datum/outfit/job/security
 
 	access = list(access_security, access_sec_doors, access_brig, access_court, access_maint_tunnels, access_morgue, access_weapons, access_forensics_lockers)
-	minimal_access = list(access_security, access_sec_doors, access_brig, access_court, access_weapons) //But see /datum/job/warden/get_access()
+	minimal_access = list(access_security, access_sec_doors, access_brig, access_court, access_weapons)
 
 /datum/job/sheriff/get_access()
 	var/list/L = list()

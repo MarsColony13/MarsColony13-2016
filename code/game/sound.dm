@@ -117,6 +117,16 @@
 				soundin = pick('sound/weapons/Gunshot.ogg', 'sound/weapons/Gunshot2.ogg','sound/weapons/Gunshot3.ogg','sound/weapons/Gunshot4.ogg')
 			if ("ricochet")
 				soundin = pick(	'sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg','sound/weapons/effects/ric3.ogg','sound/weapons/effects/ric4.ogg','sound/weapons/effects/ric5.ogg')
+			if ("step_snow")
+				soundin = pick('sound/effects/Glassbr1.ogg')
+			if ("step_sand")
+				soundin = pick('sound/effects/Glassbr1.ogg')
+			if ("step_shoes")
+				soundin = pick('sound/footstep/stepShoes1.oggg', 'sound/footstep/stepShoes2.oggg', 'sound/footstep/stepShoes3.oggg', 'sound/footstep/stepShoes4.oggg', 'sound/footstep/stepShoes5.oggg', 'sound/footstep/stepShoes6.oggg', 'sound/footstep/stepShoes7.oggg')
+			if ("step_boots")
+				soundin = pick('sound/footstep/stepShoes1.oggg', 'sound/footstep/stepShoes2.oggg', 'sound/footstep/stepShoes3.oggg', 'sound/footstep/stepShoes4.oggg', 'sound/footstep/stepShoes5.oggg', 'sound/footstep/stepShoes6.oggg', 'sound/footstep/stepShoes7.oggg')
+			if ("step_bare")
+				soundin = pick('sound/footstep/stepBare1.oggg', 'sound/footstep/stepBare2.oggg', 'sound/footstep/stepBare3.oggg', 'sound/footstep/stepBare4.oggg', 'sound/footstep/stepBare5.oggg')
 	return soundin
 
 /proc/playsound_global(file, repeat=0, wait, channel, volume)

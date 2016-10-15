@@ -179,8 +179,8 @@
 	new /obj/item/weapon/holosign_creator/security(src)
 	new /obj/item/weapon/reagent_containers/spray/pepper(src)
 	new /obj/item/clothing/suit/armor/vest/det_suit(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/sloader/c38(src)
+	new /obj/item/ammo_box/sloader/c38(src)
 	new /obj/item/weapon/storage/belt/holster(src)
 	new /obj/item/weapon/gun/projectile/revolver/detective(src)
 

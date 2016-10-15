@@ -540,3 +540,11 @@
 
 /obj/machinery/door/airlock/glass_large/narsie_act()
 	return
+
+/obj/machinery/door/airlock/glass_large/verticle
+	name = "large glass airlock"
+	opacity = 0
+	assemblytype = null
+	glass = 1
+	bound_width = 32
+	bound_height = 64 // 1x2

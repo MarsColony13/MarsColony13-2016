@@ -30,14 +30,14 @@
 	ears = /obj/item/device/radio/headset/heads/hos/alt
 	uniform = /obj/item/clothing/under/rank/security/marshal
 	shoes = /obj/item/clothing/shoes/jackboots
-	suit = /obj/item/clothing/suit/armor/hos/trenchcoat
+	suit = /obj/item/clothing/suit/armor/vest/sheriff
 	gloves = /obj/item/clothing/gloves/color/black/hos
-	head = /obj/item/clothing/head/HoS/beret
+	head = /obj/item/clothing/head/marshal
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	suit_store = /obj/item/weapon/gun/projectile/revolver/peacemaker
 	r_pocket = /obj/item/weapon/gun/energy/taser
 	l_pocket = /obj/item/weapon/restraints/handcuffs
-	backpack_contents = list(/obj/item/weapon/melee/baton/loaded=1)
+	backpack_contents = list(/obj/item/weapon/melee/classic_baton)
 
 	backpack = /obj/item/weapon/storage/backpack/security
 	satchel = /obj/item/weapon/storage/backpack/satchel/sec
@@ -50,8 +50,8 @@
 	department_head = list("Marshal")
 	department_flag = ENGSEC
 	faction = "Station"
-	total_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
-	spawn_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
+	total_positions = 5
+	spawn_positions = 5
 	supervisors = "the marshal"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
@@ -73,13 +73,13 @@
 	ears = /obj/item/device/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/sheriff
 	gloves = /obj/item/clothing/gloves/color/black
-	head = /obj/item/clothing/head/helmet/sec
-	suit = /obj/item/clothing/suit/armor/vest/alt
+	head = /obj/item/clothing/head/sheriff
+	suit = /obj/item/clothing/suit/armor/vest/sheriff
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/weapon/restraints/handcuffs
 	r_pocket = /obj/item/weapon/gun/energy/taser
 	suit_store = /obj/item/weapon/gun/projectile/revolver/peacemaker
-	backpack_contents = list(/obj/item/weapon/melee/baton/loaded=1)
+	backpack_contents = list(/obj/item/weapon/melee/classic_baton=1)
 
 	backpack = /obj/item/weapon/storage/backpack/security
 	satchel = /obj/item/weapon/storage/backpack/satchel/sec

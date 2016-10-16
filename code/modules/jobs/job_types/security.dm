@@ -126,15 +126,16 @@ Warden
 /*
 Detective
 */
+
 /datum/job/detective
 	title = "Detective"
 	flag = DETECTIVE
-	department_head = list("Head of Security")
+	department_head = list("Marshal")
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0
-	supervisors = "the head of security"
+	supervisors = "the marshal"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 
@@ -177,7 +178,7 @@ Detective
 /*
 Security Officer
 */
-/* Replaced by the sheriff
+//Replaced by the sheriff
 /datum/job/officer
 	title = "Security Officer"
 	flag = OFFICER
@@ -324,4 +325,3 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 /obj/item/device/radio/headset/headset_sec/alt/department/sci
 	keyslot = new /obj/item/device/encryptionkey/headset_sec
 	keyslot2 = new /obj/item/device/encryptionkey/headset_sci
-*/

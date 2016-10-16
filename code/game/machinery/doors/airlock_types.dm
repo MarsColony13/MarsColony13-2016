@@ -543,6 +543,8 @@
 
 /obj/machinery/door/airlock/glass_large/verticle
 	name = "large glass airlock"
+	icon = 'icons/obj/doors/airlocks/glass_large/glass_large_vertical.dmi'
+	overlays_file = 'icons/obj/doors/airlocks/glass_large/overlays_verticle.dmi'
 	opacity = 0
 	assemblytype = null
 	glass = 1

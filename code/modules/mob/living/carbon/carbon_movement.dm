@@ -49,3 +49,4 @@ var/const/SLIDE_ICE = 8
 				src.nutrition -= HUNGER_FACTOR/10
 		if((src.disabilities & FAT) && src.m_intent == "run" && src.bodytemperature <= 360)
 			src.bodytemperature += 2
+

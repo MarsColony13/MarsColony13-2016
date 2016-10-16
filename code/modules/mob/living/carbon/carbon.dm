@@ -1,5 +1,7 @@
 /mob/living/carbon
 	blood_volume = BLOOD_VOLUME_NORMAL
+	var/step = 0
+	var/stepsound = "step_bare" //Check sound.dm for these
 
 /mob/living/carbon/New()
 	create_reagents(1000)

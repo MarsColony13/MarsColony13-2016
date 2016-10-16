@@ -231,7 +231,7 @@ var/datum/subsystem/job/SSjob
 		return 0
 
 	//Scale number of open security officer slots to population
-	setup_officer_positions()
+//	setup_officer_positions()
 
 	//Jobs will have fewer access permissions if the number of players exceeds the threshold defined in game_options.txt
 	if(config.minimal_access_threshold)
@@ -402,32 +402,6 @@ var/datum/subsystem/job/SSjob
 	if(config.minimal_access_threshold)
 		H << "<FONT color='blue'><B>As this station was initially staffed with a [config.jobs_have_minimal_access ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></font>"
 	return H
-
-
-/datum/subsystem/job/proc/setup_officer_positions()
-	var/datum/job/J = SSjob.GetJob("Security Officer")
-	if(!J)
-		throw EXCEPTION("setup_officer_positions(): Security officer job is missing")
-
-	if(config.security_scaling_coeff > 0)
-		if(J.spawn_positions > 0)
-			var/officer_positions = min(12, max(J.spawn_positions, round(unassigned.len/config.security_scaling_coeff))) //Scale between configured minimum and 12 officers
-			Debug("Setting open security officer positions to [officer_positions]")
-			J.total_positions = officer_positions
-			J.spawn_positions = officer_positions
-
-	//Spawn some extra eqipment lockers if we have more than 5 officers
-	var/equip_needed = J.total_positions
-	if(equip_needed < 0) // -1: infinite available slots
-		equip_needed = 12
-	for(var/i=equip_needed-5, i>0, i--)
-		if(secequipment.len)
-			var/spawnloc = secequipment[1]
-			new /obj/structure/closet/secure_closet/security/sec(spawnloc)
-			secequipment -= spawnloc
-		else //We ran out of spare locker spawns!
-			break
-
 
 /datum/subsystem/job/proc/LoadJobs()
 	var/jobstext = return_file_text("config/jobs.txt")

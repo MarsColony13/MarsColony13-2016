@@ -11,7 +11,7 @@
 	req_admin_notify = 1
 	minimal_player_age = 14
 
-	outfit = /datum/outfit/job/hos
+	outfit = /datum/outfit/job/marshal
 
 	access = list(access_security, access_sec_doors, access_brig, access_armory, access_court, access_weapons,
 			            access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
@@ -34,8 +34,8 @@
 	gloves = /obj/item/clothing/gloves/color/black/hos
 	head = /obj/item/clothing/head/HoS/beret
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	suit_store = /obj/item/weapon/gun/energy/gun
-	r_pocket = /obj/item/device/assembly/flash/handheld
+	suit_store = /obj/item/weapon/gun/projectile/revolver/peacemaker
+	r_pocket = /obj/item/weapon/gun/energy/taser
 	l_pocket = /obj/item/weapon/restraints/handcuffs
 	backpack_contents = list(/obj/item/weapon/melee/baton/loaded=1)
 
@@ -56,7 +56,7 @@
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 
-	outfit = /datum/outfit/job/security
+	outfit = /datum/outfit/job/sheriff
 
 	access = list(access_security, access_sec_doors, access_brig, access_court, access_maint_tunnels, access_morgue, access_weapons, access_forensics_lockers)
 	minimal_access = list(access_security, access_sec_doors, access_brig, access_court, access_weapons)
@@ -77,8 +77,8 @@
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/weapon/restraints/handcuffs
-	r_pocket = /obj/item/device/assembly/flash/handheld
-	suit_store = /obj/item/weapon/gun/energy/gun/advtaser
+	r_pocket = /obj/item/weapon/gun/energy/taser
+	suit_store = /obj/item/weapon/gun/projectile/revolver/peacemaker
 	backpack_contents = list(/obj/item/weapon/melee/baton/loaded=1)
 
 	backpack = /obj/item/weapon/storage/backpack/security

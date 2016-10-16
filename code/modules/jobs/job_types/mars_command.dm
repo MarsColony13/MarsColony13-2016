@@ -3,7 +3,7 @@ Captain
 */
 /datum/job/director
 	title = "Colony Director"
-	flag = CAPTAIN
+	flag = DIRECTOR
 	department_head = list("Centcom")
 	department_flag = ENGSEC
 	faction = "Station"

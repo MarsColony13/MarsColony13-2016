@@ -135,3 +135,29 @@
 /obj/item/clothing/head/beret/sec/navyofficer
 	desc = "A special beret with the security insignia emblazoned on it. For officers with class."
 	icon_state = "officerberet"
+
+//Sheriff
+/obj/item/clothing/head/sheriff
+	name = "sheriff's hat"
+	desc = "A real, tanned leather, cowboy hat."
+	icon_state = "sheriff"
+	item_state = "sheriff"
+	armor = list(melee = 30, bullet = 30, laser = 30,energy = 10, bomb = 10, bio = 0, rad = 0, fire = 20, acid = 40)
+	cold_protection = HEAD
+	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
+	heat_protection = HEAD
+	max_heat_protection_temperature = HELMET_MAX_TEMP_PROTECT
+	strip_delay = 25
+
+//Marshal
+/obj/item/clothing/head/marshal
+	name = "marshal's hat"
+	desc = "This wide-brimmed hat will keep the sun out of your eyes so you can see all the eyes on <b>you</b>. Wear it with pride or die trying."
+	icon_state = "marshal"
+	item_state = "marshal"
+	armor = list(melee = 40, bullet = 40, laser = 40,energy = 10, bomb = 10, bio = 0, rad = 0, fire = 20, acid = 40)
+	cold_protection = HEAD
+	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
+	heat_protection = HEAD
+	max_heat_protection_temperature = HELMET_MAX_TEMP_PROTECT
+	strip_delay = 25

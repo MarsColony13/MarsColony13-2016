@@ -77,6 +77,7 @@
 	broken_states = list("damaged")
 	smooth = SMOOTH_TRUE
 	canSmoothWith = null
+	turfstepsound = "step_shoes"
 
 /turf/open/floor/holofloor/carpet/New()
 	..()
@@ -94,6 +95,7 @@
 	icon = 'icons/turf/snow.dmi'
 	icon_state = "snow"
 	slowdown = 2
+	turfstepsound = "step_snow"
 
 /turf/open/floor/holofloor/snow/cold
 	initial_gas_mix = "o2=22;n2=82;TEMP=180"
@@ -102,3 +104,4 @@
 	name = "asteroid sand"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "asteroid"
+	turfstepsound = "step_sand"

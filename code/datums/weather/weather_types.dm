@@ -182,3 +182,57 @@
 		status_signal.data["picture_state"] = "radiation"
 
 	frequency.post_signal(src, status_signal)
+
+/datum/weather/sandstorm //Sandstorms on Mars aren't as common as these will be.
+	name = "ash storm"
+	desc = "Titanic cyclones pick up huge amounts of martian sand and dust. Visibility inside of these storms is very low, and communications are cut."
+
+	telegraph_message = "<span class='boldwarning'>A huge, looming dust cloud can be seen cresting the horizon. Seek shelter.</span>"
+	telegraph_duration = 300
+	telegraph_sound = 'sound/lavaland/ash_storm_windup.ogg'
+	telegraph_overlay = "sandstorm_light"
+
+	weather_message = "<span class='userdanger'><i>The cloud plunges you into darkness as you're pelted with dust and sand.</i></span>"
+	weather_duration_lower = 600
+	weather_duration_upper = 1500
+	weather_sound = 'sound/lavaland/ash_storm_start.ogg'
+	weather_overlay = "sandstorm"
+
+	end_message = "<span class='boldannounce'>The shrieking wind whips away the last of the sand, leaving the landscape slightly shifted.</span>"
+	end_duration = 300
+	end_sound = 'sound/lavaland/ash_storm_end.ogg'
+	end_overlay = "sandstorm_light"
+
+	area_type = /area/mars/outdoors
+	target_z = ZLEVEL_STATION
+
+	probability = 90
+
+/datum/weather/sandstorm/update_areas()
+	..()
+	for(var/V in impacted_areas)
+		var/area/A = V
+		if(stage == MAIN_STAGE)
+			A.invisibility = 0
+			A.opacity = 1
+			A.layer = overlay_layer
+			A.icon = 'icons/effects/weather_effects.dmi'
+			A.icon_state = "darkness"
+		else
+			A.invisibility = INVISIBILITY_MAXIMUM
+			A.opacity = 0
+/*
+/datum/weather/sandstorm/minor
+	name = "light sandstorm"
+	desc = "A passing sandstorm harmlessly kicks up some sand."
+
+	weather_message = "<span class='notice'>Gentle embers waft down around you like grotesque snow. The storm seems to have passed you by...</span>"
+	weather_sound = 'sound/lavaland/ash_storm_windup.ogg'
+	weather_overlay = "light_ash"
+
+	end_message = "<span class='notice'>The sandstorm passes harmlessly, the winds settling to their usual murmur.</span>"
+
+	aesthetic = TRUE
+
+	probability = 10
+*/

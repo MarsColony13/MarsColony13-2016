@@ -1,7 +1,7 @@
 /world
 	mob = /mob/new_player
 	turf = /turf/open/floor/plating/mars
-	area = /area/mars/surface
+	area = /area/mars/outdoors
 	view = "15x15"
 	cache_lifespan = 7
 	fps = 20

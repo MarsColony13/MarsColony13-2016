@@ -265,6 +265,7 @@
 
 
 /datum/game_mode/proc/send_intercept()
+	return //Shitty feature. Devalues blue alert and is generall annoying.
 	var/intercepttext = "<b><i>Central Command Status Summary</i></b><hr>"
 	intercepttext += "<b>Central Command has intercepted and partially decoded a Syndicate transmission with vital information regarding their movements. The following report outlines the most \
 	likely threats to appear in your sector.</b>"

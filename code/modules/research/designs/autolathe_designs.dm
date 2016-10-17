@@ -411,7 +411,7 @@
 	name = "Speed loader (.38)"
 	id = "slc38"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
+	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/sloader/c38
 	category = list("initial", "Security")
 
@@ -419,7 +419,7 @@
 	name = "Speed loader (.45)"
 	id = "slc45"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
+	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/sloader/c45
 	category = list("initial", "Security")
 
@@ -427,7 +427,7 @@
 	name = "Speed loader (rubber tipped .45)"
 	id = "slc45rubber"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
+	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/sloader/c45/rubber
 	category = list("initial", "Security")
 
@@ -435,7 +435,7 @@
 	name = "Speed loader (hollow point .45)"
 	id = "slc45hollow"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
+	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/sloader/c45/hollow
 	category = list("initial", "Security")
 
@@ -443,7 +443,7 @@
 	name = "Speed loader (armor piercing .45)"
 	id = "slc45ap"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
+	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/sloader/c45/ap
 	category = list("initial", "Security")
 
@@ -668,7 +668,7 @@
 	name = "Speed loader (.357)"
 	id = "a357"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
+	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/sloader/a357
 	category = list("hacked", "Security")
 
@@ -676,7 +676,7 @@
 	name = "Ammo box (10mm)"
 	id = "c10mm"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
+	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/c10mm
 	category = list("hacked", "Security")
 
@@ -684,7 +684,7 @@
 	name = "Ammo box (.45)"
 	id = "c45"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
+	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/c45
 	category = list("hacked", "Security")
 
@@ -692,7 +692,7 @@
 	name = "Ammo box (9mm)"
 	id = "c9mm"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
+	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/c9mm
 	category = list("hacked", "Security")
 

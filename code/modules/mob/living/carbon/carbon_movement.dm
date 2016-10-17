@@ -11,7 +11,6 @@
 	if(legcuffed)
 		. += legcuffed.slowdown
 
-
 var/const/NO_SLIP_WHEN_WALKING = 1
 var/const/SLIDE = 2
 var/const/GALOSHES_DONT_HELP = 4
@@ -21,7 +20,6 @@ var/const/SLIDE_ICE = 8
 	if(!(lube&SLIDE_ICE))
 		add_logs(src,, "slipped",, "on [O ? O.name : "floor"]")
 	return loc.handle_slip(src, s_amount, w_amount, O, lube)
-
 
 /mob/living/carbon/Process_Spacemove(movement_dir = 0)
 	if(..())
@@ -38,8 +36,6 @@ var/const/SLIDE_ICE = 8
 	if(istype(J) && (movement_dir || J.stabilizers) && J.allow_thrust(0.01, src))
 		return 1
 
-
-
 /mob/living/carbon/Move(NewLoc, direct)
 	. = ..()
 	if(.)
@@ -49,4 +45,36 @@ var/const/SLIDE_ICE = 8
 				src.nutrition -= HUNGER_FACTOR/10
 		if((src.disabilities & FAT) && src.m_intent == "run" && src.bodytemperature <= 360)
 			src.bodytemperature += 2
+
+	if(movesounds && NewLoc == loc && canStep())
+		var/turf/open/T = NewLoc
+		if(step > 0 && (m_intent == "run"))
+			if(T.turfstepsound)//If the override var is set, play the overriding sound.
+				playsound(get_turf(src), T.turfstepsound, 100, 0, -3)
+			else if(T.wet)//If the turf is wet
+				playsound(get_turf(src), "step_puddle", 100, 0, -3)
+			else
+				if(shoes)//Else, play the normal sound for their shoe type.
+					if(istype(shoes, /obj/item/clothing/shoes/jackboots))
+						playsound(get_turf(src), "step_boots", 50, 0, -3)
+					else if(istype(shoes, /obj/item/clothing/shoes/combat))
+						playsound(get_turf(src), "step_boots", 50, 0, -3)
+					else if(istype(shoes, /obj/item/clothing/shoes/workboots))
+						playsound(get_turf(src), "step_boots", 50, 0, -3)
+					else if(istype(shoes, /obj/item/clothing/shoes/winterboots))
+						playsound(get_turf(src), "step_boots", 50, 0, -3)
+					else if(istype(shoes, /obj/item/clothing/shoes))
+						playsound(get_turf(src), "step_shoes", 50, 0, -3)
+				else if(stepsound)//They're not wearing shoes, play the default sound associated with their mob type.
+					playsound(get_turf(src), stepsound, 50, 0)
+//				else if((obj/effect/decal/cleanable/blood/splatter || obj/effect/decal/cleanable/xenoblood || /obj/effect/decal/cleanable/vomit) in T.contents)
+//					playsound(get_turf(src), "step_puddle", 100, 0, -3)
+			step = 0
+		else
+			step++
+
+/mob/living/carbon/proc/canStep()
+	if(health > 0 && !resting && !sleeping && !paralysis && has_gravity(src) && !buckled && !stat && isopenturf(loc) && !weakened && canmove)//wew lad there's probably some sort of ezpz proc for this somewhere
+		return TRUE
+	return FALSE
 

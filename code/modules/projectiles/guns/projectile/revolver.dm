@@ -45,7 +45,7 @@
 
 /obj/item/weapon/gun/projectile/revolver/proc/playloadsound(var/rounds)
 	if(rounds > 0)
-		playsound(get_turf(src), 'sound/weapons/effects/chamber.ogg', 100, -1, 0)
+		playsound(get_turf(src), 'sound/weapons/effects/chamber.ogg', 100, -1, 1)
 		rounds = rounds - 1
 		addtimer(src, "playloadsound", 5, FALSE, rounds)
 
@@ -80,7 +80,7 @@
 		C.spin()
 		chamber_round(0)
 		usr.visible_message("[usr] spins [src]'s chamber.", "<span class='notice'>You spin [src]'s chamber.</span>")
-		playsound(get_turf(src), 'sound/weapons/effects/revolverSpin.ogg', 100)
+		playsound(get_turf(src), 'sound/weapons/effects/revolverSpin.ogg', 100, 0 ,1)
 	else
 		verbs -= /obj/item/weapon/gun/projectile/revolver/verb/spin
 

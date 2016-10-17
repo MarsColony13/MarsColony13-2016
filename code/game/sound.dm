@@ -124,9 +124,18 @@
 			if ("step_shoes")
 				soundin = pick('sound/footstep/stepShoes1.ogg', 'sound/footstep/stepShoes2.ogg', 'sound/footstep/stepShoes3.ogg', 'sound/footstep/stepShoes4.ogg', 'sound/footstep/stepShoes5.ogg', 'sound/footstep/stepShoes6.ogg', 'sound/footstep/stepShoes7.ogg')
 			if ("step_boots")
-				soundin = pick('sound/footstep/stepShoes1.ogg', 'sound/footstep/stepShoes2.ogg', 'sound/footstep/stepShoes3.ogg', 'sound/footstep/stepShoes4.ogg', 'sound/footstep/stepShoes5.ogg', 'sound/footstep/stepShoes6.ogg', 'sound/footstep/stepShoes7.ogg')
+				soundin = pick('sound/footstep/stepBoots1.ogg', 'sound/footstep/stepBoots2.ogg', 'sound/footstep/stepBoots3.ogg', 'sound/footstep/stepBoots4.ogg', 'sound/footstep/stepBoots5.ogg')
 			if ("step_bare")
 				soundin = pick('sound/footstep/stepBare1.ogg', 'sound/footstep/stepBare2.ogg', 'sound/footstep/stepBare3.ogg', 'sound/footstep/stepBare4.ogg', 'sound/footstep/stepBare5.ogg')
+			if ("step_puddle")
+				soundin = pick('sound/footstep/stepPuddle1.ogg', 'sound/footstep/stepPuddle2.ogg', 'sound/footstep/stepPuddle3.ogg')
+			if ("step_gravel")
+				soundin = pick('sound/footstep/stepGravel1.ogg', 'sound/footstep/stepGravel2.ogg', 'sound/footstep/stepGravel3.ogg')
+			if ("step_rock")
+				soundin = pick('sound/footstep/stepRock1.ogg', 'sound/footstep/stepRock2.ogg', 'sound/footstep/stepRock3.ogg', 'sound/footstep/stepRock4.ogg', 'sound/footstep/stepRock5.ogg', 'sound/footstep/stepRock6.ogg')
+			if ("step_resin")
+				soundin = pick('sound/footstep/stepResin1.ogg', 'sound/footstep/stepResin2.ogg', 'sound/footstep/stepResin3.ogg', 'sound/footstep/stepResin4.ogg', 'sound/footstep/stepResin5.ogg')
+
 	return soundin
 
 /proc/playsound_global(file, repeat=0, wait, channel, volume)

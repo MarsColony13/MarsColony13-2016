@@ -4,7 +4,7 @@
 	has_gravity = 1
 
 //Default map area(instead of space):
-/area/mars/surface
+/area/mars/outdoors
 	name = "Mars"
 	icon_state = "mars"
 	music = null

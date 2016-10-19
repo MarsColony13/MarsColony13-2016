@@ -26,6 +26,7 @@ Construction breaks otherwise
 //Trinary
 #define PIPE_GAS_FILTER			/obj/machinery/atmospherics/components/trinary/filter
 #define PIPE_GAS_MIXER			/obj/machinery/atmospherics/components/trinary/mixer
+#define PIPE_SABATIER			/obj/machinery/atmospherics/components/trinary/sabatier
 
 //Disposal piping numbers - do NOT hardcode these, use the defines
 #define DISP_PIPE_STRAIGHT		0

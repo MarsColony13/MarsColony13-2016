@@ -21,7 +21,9 @@
 
 	var/list/image/blueprint_data //for the station blueprints, images of objects eg: pipes
 
-	var/turfstepsound //Used as an override for footstep sounds on this turf.
+	var/turfstepsound //Footstep sound when you walk on this turf.
+	var/sound_override = FALSE
+	var/sound_shoesonly = FALSE
 
 /turf/New()
 	..()

@@ -22,6 +22,7 @@
 
 /obj/effect/decal/cleanable/blood/splatter
 	random_icon_states = list("gibbl1", "gibbl2", "gibbl3", "gibbl4", "gibbl5")
+	is_wet = TRUE
 
 /obj/effect/decal/cleanable/blood/tracks
 	icon_state = "tracks"
@@ -49,6 +50,7 @@
 	layer = LOW_OBJ_LAYER
 	random_icon_states = list("gib1", "gib2", "gib3", "gib4", "gib5", "gib6")
 	mergeable_decal = 0
+	is_wet = TRUE
 
 /obj/effect/decal/cleanable/blood/gibs/New()
 	..()

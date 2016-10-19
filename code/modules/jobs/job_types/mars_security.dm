@@ -37,7 +37,7 @@
 	suit_store = /obj/item/weapon/gun/projectile/revolver/peacemaker
 	r_pocket = /obj/item/weapon/gun/energy/taser
 	l_pocket = /obj/item/weapon/restraints/handcuffs
-	backpack_contents = list(/obj/item/weapon/melee/classic_baton)
+	backpack_contents = list(/obj/item/weapon/melee/classic_baton=1)
 
 	backpack = /obj/item/weapon/storage/backpack/security
 	satchel = /obj/item/weapon/storage/backpack/satchel/sec

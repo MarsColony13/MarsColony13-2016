@@ -45,36 +45,52 @@ var/const/SLIDE_ICE = 8
 				src.nutrition -= HUNGER_FACTOR/10
 		if((src.disabilities & FAT) && src.m_intent == "run" && src.bodytemperature <= 360)
 			src.bodytemperature += 2
+	do_move_sounds(NewLoc)
 
+/mob/living/carbon/proc/do_move_sounds(NewLoc)//Called in the Move() proc for carbon mobs.
 	if(movesounds && NewLoc == loc && canStep())
 		var/turf/open/T = NewLoc
-		if(step > 0 && (m_intent == "run"))
+		var/vol = 50 //How loud the footstep will be, percentage based.
+		var/hear = 7 //How far away the footstep can be heard.
+		var/range = 0 //The actual range derived from what the hear var is set to.
+		switch(m_intent)
+			if("run")
+				vol = 50
+				hear = 6
+			if("walk")
+				vol = 15
+				hear = 3
+		range = hear - 7 //Due to how the playsound() proc works, sounds have a default range of 7. This just helps non-coders add new steps and ranges.
+		if(step > 0)
 			if(T.turfstepsound)//If the override var is set, play the overriding sound.
-				playsound(get_turf(src), T.turfstepsound, 100, 0, -3)
-			else if(T.wet)//If the turf is wet
-				playsound(get_turf(src), "step_puddle", 100, 0, -3)
+				playsound(get_turf(src), T.turfstepsound, vol, 1, range)
+			else if(T.wet)//If the turf is wet.
+				playsound(get_turf(src), "step_puddle", vol, 1, range)
 			else
 				if(shoes)//Else, play the normal sound for their shoe type.
 					if(istype(shoes, /obj/item/clothing/shoes/jackboots))
-						playsound(get_turf(src), "step_boots", 50, 0, -3)
+						playsound(get_turf(src), "step_boots", vol, 1, range)
 					else if(istype(shoes, /obj/item/clothing/shoes/combat))
-						playsound(get_turf(src), "step_boots", 50, 0, -3)
+						playsound(get_turf(src), "step_boots", vol, 1, range)
 					else if(istype(shoes, /obj/item/clothing/shoes/workboots))
-						playsound(get_turf(src), "step_boots", 50, 0, -3)
+						playsound(get_turf(src), "step_boots", vol, 1, range)
 					else if(istype(shoes, /obj/item/clothing/shoes/winterboots))
-						playsound(get_turf(src), "step_boots", 50, 0, -3)
+						playsound(get_turf(src), "step_boots", vol, 1, range)
 					else if(istype(shoes, /obj/item/clothing/shoes))
-						playsound(get_turf(src), "step_shoes", 50, 0, -3)
-				else if(stepsound)//They're not wearing shoes, play the default sound associated with their mob type.
-					playsound(get_turf(src), stepsound, 50, 0)
-//				else if((obj/effect/decal/cleanable/blood/splatter || obj/effect/decal/cleanable/xenoblood || /obj/effect/decal/cleanable/vomit) in T.contents)
-//					playsound(get_turf(src), "step_puddle", 100, 0, -3)
+						playsound(get_turf(src), "step_shoes", vol, 1, range)
+				else
+					if(ishuman(src))
+						var/mob/living/carbon/human/H = src
+						if(H.socks && H.socks!= "None" && istext(H.socks))//Are they wearing socks? [SUPER STEALTH]
+							playsound(get_turf(src), "step_sand", vol, 1, range)
+					else if(stepsound)//They're not wearing shoes or socks, play the default sound associated with their mob type.
+						playsound(get_turf(src), stepsound, vol, 1, range)
 			step = 0
 		else
 			step++
 
-/mob/living/carbon/proc/canStep()
+
+/mob/living/carbon/proc/canStep()//A batch of checks to see if the mob moving can actually move on their own.
 	if(health > 0 && !resting && !sleeping && !paralysis && has_gravity(src) && !buckled && !stat && isopenturf(loc) && !weakened && canmove)//wew lad there's probably some sort of ezpz proc for this somewhere
 		return TRUE
 	return FALSE
-

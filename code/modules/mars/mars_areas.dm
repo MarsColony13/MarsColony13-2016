@@ -16,6 +16,7 @@
 	power_equip = 0
 	power_light = 0
 	outdoors = 1
+	noteleport = 1
 	ambientsounds = list('sound/ambience/ambimars1.ogg')
 	flags = NONE
 
@@ -23,7 +24,7 @@
 /area/shuttle/arrival_pod
 	name = "Arrival Drop Pod"
 	requires_power = 0
-	luminosity = 1
+	luminosity = 0
 	lighting_use_dynamic = DYNAMIC_LIGHTING_ENABLED
 	has_gravity = 1
 	valid_territory = 0

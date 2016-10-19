@@ -5,6 +5,7 @@
 	var/blood_state = "" //I'm sorry but cleanable/blood code is ass, and so is blood_DNA
 	var/bloodiness = 0 //0-100, amount of blood in this decal, used for making footprints and affecting the alpha of bloody footprints
 	var/mergeable_decal = 1 //when two of these are on a same tile or do we need to merge them into just one?
+	var/is_wet = FALSE //Handles footstep sounds when stepping in a wet puddle of something.
 
 /obj/effect/decal/cleanable/New()
 	if (random_icon_states && length(src.random_icon_states) > 0)
@@ -89,3 +90,10 @@
 		return bloodiness
 	else
 		return 0
+
+/obj/effect/decal/cleanable/proc/is_wet()
+	if(is_wet == TRUE)
+		return TRUE
+	if(bloodiness)
+		return TRUE
+	return FALSE

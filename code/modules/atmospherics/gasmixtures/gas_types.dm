@@ -87,6 +87,16 @@ var/list/hardcoded_gases = list("o2","n2","co2","plasma") //the main four gases,
 	specific_heat = 20
 	name = "BZ"
 
+/datum/gas/hydrogen
+	id = "h2"
+	specific_heat = 20
+	name = "Hydrogen"
+
+/datum/gas/methane
+	id = "ch4"
+	specific_heat = 20
+	name = "Methane"
+
 /obj/effect/overlay/gas/
 	icon = 'icons/effects/tile_effects.dmi'
 	mouse_opacity = 0

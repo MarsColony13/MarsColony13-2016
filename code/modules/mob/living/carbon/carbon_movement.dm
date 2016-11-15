@@ -70,6 +70,8 @@ var/const/SLIDE_ICE = 8
 				if(shoes)//Else, play the normal sound for their shoe type.
 					if(istype(shoes, /obj/item/clothing/shoes/jackboots))
 						playsound(get_turf(src), "step_boots", vol, 1, range)
+					if(istype(shoes, /obj/item/clothing/shoes/magboots))
+						playsound(get_turf(src), "step_boots", vol, 1, range)
 					else if(istype(shoes, /obj/item/clothing/shoes/combat))
 						playsound(get_turf(src), "step_boots", vol, 1, range)
 					else if(istype(shoes, /obj/item/clothing/shoes/workboots))
@@ -81,9 +83,11 @@ var/const/SLIDE_ICE = 8
 				else
 					if(ishuman(src))
 						var/mob/living/carbon/human/H = src
-						if(H.socks && H.socks!= "None" && istext(H.socks))//Are they wearing socks? [SUPER STEALTH]
-							playsound(get_turf(src), "step_sand", vol, 1, range)
-					else if(stepsound)//They're not wearing shoes or socks, play the default sound associated with their mob type.
+						if(H.socks && H.socks != "Nude")//Are they wearing socks? [SUPER STEALTH]
+							playsound(get_turf(src), "step_socks", vol, 1, range)
+						else if(stepsound)//They're not wearing shoes or socks, play the default sound associated with their mob type.
+							playsound(get_turf(src), stepsound, vol, 1, range)
+					else if(stepsound)
 						playsound(get_turf(src), stepsound, vol, 1, range)
 			step = 0
 		else

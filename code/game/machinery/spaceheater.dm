@@ -6,6 +6,7 @@
 	anchored = 0
 	density = 1
 	interact_open = TRUE
+	interact_offline = TRUE //Allows you to use it without being in an area with an APC that's 'powering' it.
 	icon = 'icons/obj/atmos.dmi'
 	icon_state = "sheater-off"
 	name = "space heater"

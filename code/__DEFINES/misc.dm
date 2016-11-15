@@ -535,3 +535,28 @@ var/global/list/ghost_others_options = list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 #define LUMA_R 0.213
 #define LUMA_G 0.715
 #define LUMA_B 0.072
+
+//attack visual effects
+#define ATTACK_EFFECT_PUNCH		"punch"
+#define ATTACK_EFFECT_KICK		"kick"
+#define ATTACK_EFFECT_SMASH		"smash"
+#define ATTACK_EFFECT_CLAW		"claw"
+#define ATTACK_EFFECT_DISARM	"disarm"
+#define ATTACK_EFFECT_BITE		"bite"
+#define ATTACK_EFFECT_MECHFIRE	"mech_fire"
+#define ATTACK_EFFECT_MECHTOXIN	"mech_toxin"
+
+
+//different types of atom colorations
+#define ADMIN_COLOUR_PRIORITY 		1 //only used by rare effects like greentext coloring mobs and when admins varedit color
+#define TEMPORARY_COLOUR_PRIORITY 	2 //e.g. purple effect of the revenant on a mob, black effect when mob electrocuted
+#define WASHABLE_COLOUR_PRIORITY 	3 //color splashed onto an atom (e.g. paint on turf)
+#define FIXED_COLOUR_PRIORITY 		4 //color inherent to the atom (e.g. blob color)
+#define COLOUR_PRIORITY_AMOUNT 4 //how many priority levels there are.
+
+
+//Nuke Endgame
+
+#define NUKE_NEAR_MISS 1
+#define NUKE_MISS_STATION 2
+#define NUKE_SYNDICATE_BASE 3

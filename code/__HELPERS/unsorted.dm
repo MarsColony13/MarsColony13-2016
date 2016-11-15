@@ -872,15 +872,14 @@ var/list/WALLITEMS_INVERSE = list(
 	user << "<span class='notice'>Results of analysis of \icon[icon] [target].</span>"
 	if(total_moles>0)
 		user << "<span class='notice'>Pressure: [round(pressure,0.1)] kPa</span>"
-
+		user << "<span class='notice'>Temperature: [round(air_contents.temperature-T0C)] &deg;C</span>"
 		var/list/cached_gases = air_contents.gases
-
 		for(var/id in cached_gases)
 			var/gas_concentration = cached_gases[id][MOLES]/total_moles
-			if(id in hardcoded_gases || gas_concentration > 0.001) //ensures the four primary gases are always shown.
+			if(id in hardcoded_gases) //ensures the four primary gases are always shown.
 				user << "<span class='notice'>[cached_gases[id][GAS_META][META_GAS_NAME]]: [round(gas_concentration*100, 0.01)] %</span>"
-
-		user << "<span class='notice'>Temperature: [round(air_contents.temperature-T0C)] &deg;C</span>"
+			else if(gas_concentration > 0.001) //Shows all other gasses as well.
+				user << "<span class='notice'>[cached_gases[id][GAS_META][META_GAS_NAME]]: [round(gas_concentration*100, 0.01)] %</span>"
 	else
 		user << "<span class='notice'>[target] is empty!</span>"
 	return

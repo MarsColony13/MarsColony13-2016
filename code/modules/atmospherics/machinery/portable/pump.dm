@@ -102,8 +102,12 @@
 			if(on && !holding)
 				var/plasma = air_contents.gases["plasma"]
 				var/n2o = air_contents.gases["n2o"]
-				if(n2o || plasma)
-					message_admins("[key_name_admin(usr)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[usr]'>?</A>) (<A HREF='?_src_=holder;adminplayerobservefollow=\ref[usr]'>FLW</A>) turned on a pump that contains [n2o ? "N2O" : ""][n2o && plasma ? " & " : ""][plasma ? "Plasma" : ""]! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
+				var/h2 = air_contents.gases["h2"]
+				var/ch4 = air_contents.gases["ch4"]
+				var/bz = air_contents.gases["bz"]
+				var/freon = air_contents.gases["freon"]
+				if(n2o || plasma || h2 || ch4)
+					message_admins("[key_name_admin(usr)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[usr]'>?</A>) (<A HREF='?_src_=holder;adminplayerobservefollow=\ref[usr]'>FLW</A>) turned on a pump that contains [n2o ? "N2O" : ""][plasma ? " Plasma" : ""][h2 ? " Hydrogen" : ""][ch4 ? " Methane" : ""][freon ? " Freon" : ""][bz ? " BZ" : ""]! (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
 					log_admin("[key_name(usr)] turned on a pump that contains [n2o ? "N2O" : ""][n2o && plasma ? " & " : ""][plasma ? "Plasma" : ""] at [x], [y], [z]")
 			. = TRUE
 		if("direction")

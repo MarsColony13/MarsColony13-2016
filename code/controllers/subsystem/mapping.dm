@@ -22,6 +22,8 @@ var/datum/subsystem/mapping/SSmapping
 	if (mining_type == "lavaland")
 		seedRuins(list(5), config.lavaland_budget, /area/lavaland/surface/outdoors, lava_ruins_templates)
 		spawn_rivers()
+	if (mining_type == "mars")
+//		set_mars_mining_baseturfs()
 	else
 		make_mining_asteroid_secrets()
 
@@ -34,7 +36,7 @@ var/datum/subsystem/mapping/SSmapping
 			else
 				space_zlevels += i
 
-	seedRuins(space_zlevels, config.space_budget, /area/space, space_ruins_templates)
+//	seedRuins(space_zlevels, config.space_budget, /area/space, space_ruins_templates)
 
 	// Set up Z-level transistions.
 	setup_map_transitions()

@@ -97,7 +97,7 @@
 	if(!C || !user)
 		return
 	if(istype(C, /obj/item/weapon/wrench))
-		user << "<span class='notice'>You begin removing rods...</span>"
+		user << "<span class='notice'>You begin removing the reinforcing rods...</span>"
 		playsound(src, 'sound/items/Ratchet.ogg', 80, 1)
 		if(do_after(user, 30/C.toolspeed, target = src))
 			if(!istype(src, /turf/open/floor/engine))
@@ -145,6 +145,18 @@
 /turf/open/floor/engine/air
 	name = "air floor"
 	initial_gas_mix = "o2=2644;n2=10580;TEMP=293.15"
+
+/turf/open/floor/engine/h2
+	name = "h2 floor"
+	initial_gas_mix = "h2=100000;TEMP=293.15"
+
+/turf/open/floor/engine/ch4
+	name = "ch4 floor"
+	initial_gas_mix = "ch4=100000;TEMP=293.15"
+
+/turf/open/floor/engine/ch4burn
+	name = "methane burn floor"
+	initial_gas_mix = "ch4=100;o2=100;TEMP=293.15"
 
 
 

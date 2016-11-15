@@ -129,6 +129,8 @@
 				soundin = pick('sound/footstep/stepBare1.ogg', 'sound/footstep/stepBare2.ogg', 'sound/footstep/stepBare3.ogg', 'sound/footstep/stepBare4.ogg', 'sound/footstep/stepBare5.ogg')
 			if ("step_puddle")
 				soundin = pick('sound/footstep/stepPuddle1.ogg', 'sound/footstep/stepPuddle2.ogg', 'sound/footstep/stepPuddle3.ogg')
+			if ("step_socks")
+				soundin = pick('sound/footstep/stepSock1.ogg', 'sound/footstep/stepSock2.ogg', 'sound/footstep/stepSock3.ogg')
 			if ("step_gravel")
 				soundin = pick('sound/footstep/stepGravel1.ogg', 'sound/footstep/stepGravel2.ogg', 'sound/footstep/stepGravel3.ogg')
 			if ("step_rock")

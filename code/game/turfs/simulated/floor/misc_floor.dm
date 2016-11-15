@@ -105,6 +105,11 @@
 /turf/open/floor/plating/snowed/temperatre
 	temperature = 255.37
 
+/turf/open/floor/plating/snowed/mars
+	baseturf = /turf/open/floor/plating/mars/polar/snow
+	initial_gas_mix = "co2=1.425;o2=0.015;n2=0.06;TEMP=120"//95% CO2, 1% oxygen, 4% N2, -153C, 120K
+	temperature = 120
+
 /turf/open/floor/noslip
 	name = "high-traction floor"
 	icon_state = "noslip"

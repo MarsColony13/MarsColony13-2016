@@ -120,6 +120,11 @@
 	add_logs(firer, L, "shot", src, reagent_note)
 	return L.apply_effects(stun, weaken, paralyze, irradiate, slur, stutter, eyeblur, drowsy, blocked, stamina, jitter)
 
+/obj/item/projectile/proc/headshot(var/mob/living/target)
+	if(flag == "bullet" && damage > 20)//A relatively powerful bullet is required.
+		if(target.getarmor("head", "bullet") < 30)//If their armor isn't sufficient to stop the bullet. Normal security armor will prevent this from happening.
+			return
+
 /obj/item/projectile/proc/vol_by_damage()
 	if(src.damage)
 		return Clamp((src.damage) * 0.67, 30, 100)// Multiply projectile damage by 0.67, then clamp the value between 30 and 100

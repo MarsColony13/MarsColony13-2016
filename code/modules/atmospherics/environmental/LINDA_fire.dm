@@ -14,10 +14,12 @@
 
 	var/oxy = air_contents.gases["o2"] ? air_contents.gases["o2"][MOLES] : 0
 	var/tox = air_contents.gases["plasma"] ? air_contents.gases["plasma"][MOLES] : 0
+	var/h2 = air_contents.gases["h2"] ? air_contents.gases["h2"][MOLES] : 0
+	var/ch4 = air_contents.gases["ch4"] ? air_contents.gases["ch4"][MOLES] : 0
 
 	if(active_hotspot)
 		if(soh)
-			if(tox > 0.5 && oxy > 0.5)
+			if((tox > 0.5 || ch4 > 0.5 || h2 > 0.5) && oxy > 0.5)
 				if(active_hotspot.temperature < exposed_temperature)
 					active_hotspot.temperature = exposed_temperature
 				if(active_hotspot.volume < exposed_volume)
@@ -25,14 +27,24 @@
 		return 1
 
 	var/igniting = 0
+	var/list/firetype = list("tox"	= 0,
+							 "ch4"	= 0,
+							 "h2"	= 0)
 
 	if((exposed_temperature > PLASMA_MINIMUM_BURN_TEMPERATURE) && tox > 0.5)
 		igniting = 1
+		firetype["tox"] = 1
+	if((exposed_temperature > METHANE_MINIMUM_BURN_TEMPERATURE) && ch4 > 0.5)
+		igniting = 1
+		firetype["ch4"] = 1
+	if((exposed_temperature > HYDROGEN_MINIMUM_BURN_TEMPERATURE) && h2 > 0.5)
+		igniting = 1
+		firetype["h2"] = 1
+
+	if(igniting && oxy < 0.5)
+		return 0
 
 	if(igniting)
-		if(oxy < 0.5 || tox < 0.5)
-			return 0
-
 		active_hotspot = PoolOrNew(/obj/effect/hotspot, src)
 		active_hotspot.temperature = exposed_temperature
 		active_hotspot.volume = exposed_volume
@@ -55,9 +67,12 @@
 	var/temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST
 	var/just_spawned = 1
 	var/bypassing = 0
-
+	var/list/firetype = list("tox"	= FALSE,
+							 "ch4"	= FALSE,
+							 "h2"	= FALSE)
 /obj/effect/hotspot/New()
 	..()
+	playsound(src, 'sound/effects/fire1.ogg', 20, 1, 4)
 	SSair.hotspots += src
 	perform_exposure()
 	setDir(pick(cardinal))
@@ -105,17 +120,38 @@
 		qdel(src)
 		return
 
+	var/oxy_moles = location.air.gases["o2"] ? location.air.gases["o2"][MOLES] : 0
+	var/tox_moles = location.air.gases["plasma"] ? location.air.gases["plasma"][MOLES] : 0
+	var/h2_moles = location.air.gases["h2"] ? location.air.gases["h2"][MOLES] : 0
+	var/ch4_moles = location.air.gases["ch4"] ? location.air.gases["ch4"][MOLES] : 0
+
 	if(location.excited_group)
 		location.excited_group.reset_cooldowns()
 
 	if((temperature < FIRE_MINIMUM_TEMPERATURE_TO_EXIST) || (volume <= 1))
 		qdel(src)
 		return
-
-	if(!(location.air) || !location.air.gases["plasma"] || !location.air.gases["o2"] || location.air.gases["plasma"][MOLES] < 0.5 || location.air.gases["o2"][MOLES] < 0.5)
+/*
+	if(!(location.air) || (!location.air.gases["plasma"] && !location.air.gases["o2"] || location.air.gases["plasma"][MOLES] < 0.5) || location.air.gases["o2"][MOLES] < 0.5)
 		qdel(src)
 		return
-
+*/
+	if(oxy_moles > 0.5)
+		if(tox_moles > 0.5)
+			firetype["tox"] = TRUE
+		else
+			firetype["tox"] = FALSE
+		if(ch4_moles > 0.5)
+			firetype["ch4"] = TRUE
+		else
+			firetype["ch4"] = FALSE
+		if(h2_moles > 0.5)
+			firetype["h2"] = TRUE
+		else
+			firetype["h2"] = FALSE
+	if(firetype["tox"] + firetype["ch4"] + firetype["h2"] < 1)//If there's no fires burning.
+		qdel(src)
+		return
 	perform_exposure()
 
 	if(bypassing)

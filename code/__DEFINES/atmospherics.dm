@@ -50,20 +50,20 @@
 #define WINDOW_HEAT_TRANSFER_COEFFICIENT	0.1		//a hack for now
 	//Must be between 0 and 1. Values closer to 1 equalize temperature faster
 	//Should not exceed 0.4 else strange heat flow occur
-#define FIRE_MINIMUM_TEMPERATURE_TO_SPREAD	150+T0C
-#define FIRE_MINIMUM_TEMPERATURE_TO_EXIST	100+T0C
+#define FIRE_MINIMUM_TEMPERATURE_TO_SPREAD	300+T0C
+#define FIRE_MINIMUM_TEMPERATURE_TO_EXIST	300+T0C
 #define FIRE_SPREAD_RADIOSITY_SCALE			0.85
 #define FIRE_CARBON_ENERGY_RELEASED			500000	//Amount of heat released per mole of burnt carbon into the tile
 #define FIRE_PLASMA_ENERGY_RELEASED			3000000	//Amount of heat released per mole of burnt plasma into the tile
-#define FIRE_METHANE_ENERGY_RELEASED		1000000	//Amount of heat released per mole of burnt methane into the tile
+#define FIRE_METHANE_ENERGY_RELEASED		3000000	//Amount of heat released per mole of burnt methane into the tile
 #define FIRE_GROWTH_RATE					40000	//For small fires
 #define CARBON_LIFEFORM_FIRE_RESISTANCE 	200+T0C	//Resistance to fire damage
 #define CARBON_LIFEFORM_FIRE_DAMAGE			4		//Fire damage
 	//Plasma fire properties
 #define OXYGEN_BURN_RATE_BASE				1.4
 #define PLASMA_BURN_RATE_DELTA				9
-#define PLASMA_MINIMUM_BURN_TEMPERATURE		100+T0C
-#define PLASMA_UPPER_TEMPERATURE			1370+T0C
+#define PLASMA_MINIMUM_BURN_TEMPERATURE		300+T0C
+#define PLASMA_UPPER_TEMPERATURE			1670+T0C
 #define PLASMA_MINIMUM_OXYGEN_NEEDED		2
 #define PLASMA_MINIMUM_OXYGEN_PLASMA_RATIO	30
 #define PLASMA_OXYGEN_FULLBURN				10
@@ -77,12 +77,23 @@
 #define CARBON_CATALYST_COEFFICENT			0.01
 #define FUSION_PURITY_THRESHOLD				0.9
 	//Methane fire properties
-#define METHANE_BURN_RATE_DELTA					10
+#define OXYGEN_BURN_RATE_METHANE				8
+#define METHANE_BURN_RATE						4
 #define METHANE_MINIMUM_BURN_TEMPERATURE		500+T0C
-#define METHANE_UPPER_TEMPERATURE				2000+T0C
+#define METHANE_UPPER_TEMPERATURE				1963+T0C
 #define METHANE_MINIMUM_OXYGEN_NEEDED			2
-#define METHANE_MINIMUM_OXYGEN_METHANE_RATIO	2
-#define METHANE_OXYGEN_FULLBURN					10
+#define METHANE_MINIMUM_OXYGEN_METHANE_RATIO	30
+#define METHANE_OXYGEN_FULLBURN					1
+#define METHANE_BURN_LOWER_LIMIT				4.4//Percentage concentration in any given gas mix where at this point and to the upper limit, the gas is combustable.(Explosive/Flammability limits)
+#define METHANE_BURN_UPPER_LIMIT				17
+	//Hydrogen Burn Properties
+#define OXYGEN_BURN_RATE_HYDROGEN				1
+#define HYDROGEN_BURN_RATE_DELTA				10
+#define HYDROGEN_MINIMUM_BURN_TEMPERATURE		773.15//K
+#define HYDROGEN_UPPER_TEMPERATURE				2100
+#define HYDROGEN_MINIMUM_OXYGEN_NEEDED			2
+#define HYDROGEN_MINIMUM_OXYGEN_METHANE_RATIO	50
+#define HYDROGEN_OXYGEN_FULLBURN				10
 // Pressure limits.
 #define HAZARD_HIGH_PRESSURE				550		//This determins at what pressure the ultra-high pressure red icon is displayed. (This one is set as a constant)
 #define WARNING_HIGH_PRESSURE				325		//This determins when the orange pressure icon is displayed (it is 0.7 * HAZARD_HIGH_PRESSURE)

@@ -19,7 +19,7 @@
 		icon_state = "[environment_type][rand(0,12)]"
 
 /turf/open/floor/plating/mars/polar
-	name = "\proper icy sand"
+	name = "\proper cold sand"
 	desc = "You can just make out some small particles of ice in this sand."
 	baseturf = /turf/open/floor/plating/mars/polar
 	environment_type = "marssand"
@@ -30,7 +30,7 @@
 /turf/open/floor/plating/mars/polar/snow
 	name = "\proper snow"
 	desc = null
-	baseturf = /turf/open/floor/plating/mars/polar
+	baseturf = /turf/open/floor/plating/mars/polar/snow
 	initial_gas_mix = "co2=1.425;o2=0.015;n2=0.06;TEMP=120"//95% CO2, 1% oxygen, 4% N2, -153C, 120K
 	temperature = 120
 	icon_state = "snow"
@@ -61,4 +61,16 @@
 	turf_type = /turf/open/floor/plating/mars
 	baseturf = /turf/open/floor/plating/mars
 	defer_change = 1
-	temperature = 213.15
+	temperature = 213.15//-70C
+
+/turf/closed/mineral/ice//Used for ice mining on Mars
+	name = "\proper ice"
+	desc = "Extremely cold water ice. This is the good stuff right here."
+	icon_state = "icerock"
+	environment_type = "ice"
+	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
+	turf_type = /turf/open/floor/plating/mars/polar/snow
+	baseturf = /turf/open/floor/plating/mars/polar/snow
+	defer_change = 1
+	temperature = 120//-153C
+//	opacity = 0 //Looks kinda janky.

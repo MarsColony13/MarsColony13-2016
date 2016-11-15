@@ -24,7 +24,7 @@ var/list/hardcoded_gases = list("o2","n2","co2","plasma") //the main four gases,
 
 /datum/gas
 	var/id = ""
-	var/specific_heat = 0
+	var/specific_heat = 0  //I don't know what this is for. It's not used anywhere. Maybe it was designed to be the 'default temperature' for the gas, seeing as 20 is room temperature in C.
 	var/name = ""
 	var/gas_overlay = "" //icon_state in icons/effects/tile_effects.dmi
 	var/moles_visible = null
@@ -89,12 +89,12 @@ var/list/hardcoded_gases = list("o2","n2","co2","plasma") //the main four gases,
 
 /datum/gas/hydrogen
 	id = "h2"
-	specific_heat = 20
+	specific_heat = 160
 	name = "Hydrogen"
 
 /datum/gas/methane
 	id = "ch4"
-	specific_heat = 20
+	specific_heat = 160
 	name = "Methane"
 
 /obj/effect/overlay/gas/

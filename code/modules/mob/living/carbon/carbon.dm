@@ -1,5 +1,8 @@
 /mob/living/carbon
 	blood_volume = BLOOD_VOLUME_NORMAL
+	var/step = 0
+	var/movesounds = FALSE //Leave FALSE to not have a sound when you move around.
+	var/stepsound //You can set it to text, reference a file, or use pick() or a similar proc. If text, check sound.dm
 
 /mob/living/carbon/New()
 	create_reagents(1000)

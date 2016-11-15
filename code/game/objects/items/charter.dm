@@ -1,9 +1,8 @@
-/obj/item/station_charter
-	name = "station charter"
+/obj/item/colony_charter
+	name = "colony charter"
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll2"
-	desc = "An official document entrusting the governance of the station \
-		and surrounding space to the Captain. "
+	desc = "An official document entrusting the governance of the colony to the director."
 	var/used = FALSE
 
 	var/unlimited_uses = FALSE
@@ -13,7 +12,7 @@
 
 	var/static/regex/standard_station_regex
 
-/obj/item/station_charter/New()
+/obj/item/colony_charter/New()
 	. = ..()
 	if(!standard_station_regex)
 		var/prefixes = jointext(station_prefixes, "|")
@@ -23,19 +22,19 @@
 		var/regexstr = "(([prefixes]) )?(([names]) ?)([suffixes]) ([numerals])"
 		standard_station_regex = new(regexstr)
 
-/obj/item/station_charter/Destroy()
+/obj/item/colony_charter/Destroy()
 	if(response_timer_id)
 		deltimer(response_timer_id)
 	response_timer_id = null
 	. = ..()
 
-/obj/item/station_charter/attack_self(mob/living/user)
+/obj/item/colony_charter/attack_self(mob/living/user)
 	if(used)
-		user << "This charter has already been used to name the station."
+		user << "This charter has already been used to name the colony."
 		return
 	if(!ignores_timeout && (world.time-round_start_time > CHALLENGE_TIME_LIMIT)) //5 minutes
 		user << "The crew has already settled into the shift. \
-			It probably wouldn't be good to rename the station right now."
+			It probably wouldn't be good to rename the colony right now."
 		return
 	if(response_timer_id)
 		user << "You're still waiting for approval from your employers about \
@@ -49,7 +48,7 @@
 
 	if(!new_name)
 		return
-	log_game("[key_name(user)] has proposed to name the station as \
+	log_game("[key_name(user)] has proposed to name the colony as \
 		[new_name]")
 
 	if(standard_station_regex.Find(new_name))
@@ -61,9 +60,9 @@
 	// Autoapproves after a certain time
 	response_timer_id = addtimer(src, "rename_station", approval_time, \
 		FALSE, new_name, user)
-	admins << "<span class='adminnotice'><b><font color=orange>CUSTOM STATION RENAME:</font></b>[key_name_admin(user)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[user]'>?</A>) proposes to rename the station to [new_name] (will autoapprove in [approval_time / 10] seconds). (<A HREF='?_src_=holder;BlueSpaceArtillery=\ref[user]'>BSA</A>) (<A HREF='?_src_=holder;reject_custom_name=\ref[src]'>REJECT</A>)</span>"
+	admins << "<span class='adminnotice'><b><font color=orange>CUSTOM COLONY RENAME:</font></b>[key_name_admin(user)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[user]'>?</A>) proposes to rename the colony to [new_name] (will autoapprove in [approval_time / 10] seconds). (<A HREF='?_src_=holder;BlueSpaceArtillery=\ref[user]'>BSA</A>) (<A HREF='?_src_=holder;reject_custom_name=\ref[src]'>REJECT</A>)</span>"
 
-/obj/item/station_charter/proc/reject_proposed(user)
+/obj/item/colony_charter/proc/reject_proposed(user)
 	if(!user)
 		return
 	if(!response_timer_id)
@@ -71,7 +70,7 @@
 	var/turf/T = get_turf(src)
 	T.visible_message("<span class='warning'>The proposed changes disappear \
 		from [src]; it looks like they've been rejected.</span>")
-	var/m = "[key_name(user)] has rejected the proposed station name."
+	var/m = "[key_name(user)] has rejected the proposed colony name."
 
 	message_admins(m)
 	log_admin(m)
@@ -79,13 +78,13 @@
 	deltimer(response_timer_id)
 	response_timer_id = null
 
-/obj/item/station_charter/proc/rename_station(designation, mob/user)
+/obj/item/colony_charter/proc/rename_station(designation, mob/user)
 	world.name = designation
 	station_name = designation
-	minor_announce("[user.real_name] has designated your station as [world.name]", "Captain's Charter", 0)
-	log_game("[key_name(user)] has renamed the station as [world.name]")
+	minor_announce("[user.real_name] has designated your colony as [world.name]", "Captain's Charter", 0)
+	log_game("[key_name(user)] has renamed the colony as [world.name]")
 
-	name = "station charter for [world.name]"
+	name = "colony charter for [world.name]"
 	desc = "An official document entrusting the governance of \
 		[world.name] and surrounding space to Captain [user]."
 

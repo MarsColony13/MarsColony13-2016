@@ -39,6 +39,7 @@
 	desc = "Surf's up."
 	icon_state = "sand"
 	baseturf = /turf/open/floor/plating/beach/sand
+	turfstepsound = "step_sand"
 
 /turf/open/floor/plating/beach/coastline_t
 	name = "coastline"
@@ -60,6 +61,7 @@
 /turf/open/floor/plating/ironsand
 	name = "iron sand"
 	desc = "Like sand, but more <i>metal</i>."
+	turfstepsound = "step_sand"
 
 /turf/open/floor/plating/ironsand/New()
 	..()

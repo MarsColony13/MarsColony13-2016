@@ -68,7 +68,8 @@
 
 /obj/item/weapon/storage/internal/pocket/small/detective
 	priority = TRUE // so the detectives would discover pockets in their hats
-
+/*This does not work right. The pocket does not update and you can't remove the flask or add anything to it to update the inventory. Plus, the detective already gets a flask.
 /obj/item/weapon/storage/internal/pocket/small/detective/New()
 	..()
 	new /obj/item/weapon/reagent_containers/food/drinks/flask/det(src)
+*/

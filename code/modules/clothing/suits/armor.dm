@@ -26,6 +26,11 @@
 	icon_state = "armor"
 	item_state = "armor"
 
+/obj/item/clothing/suit/armor/vest/sheriff
+	desc = "An armored vest that protects against most types of damage. Smells like justice."
+	icon_state = "armoraltgreen"
+	item_state = "armoraltgreen"
+
 /obj/item/clothing/suit/armor/vest/blueshirt
 	icon_state = "blueshift"
 	item_state = "blueshift"

@@ -80,6 +80,9 @@
  #define WEAPON_MEDIUM 1
  #define WEAPON_HEAVY 2
 
+//Magazines
+#define SPEEDLOADER 1
+#define MAGAZINE 2
 
 //Health Defines
 

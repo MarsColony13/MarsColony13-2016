@@ -205,6 +205,56 @@ var/list/gaslist_cache = null
 	var/old_heat_capacity = heat_capacity()
 	var/list/cached_gases = gases //this speeds things up because accessing datum vars is slow
 
+ //Methane burning
+	if(cached_gases["ch4"] && cached_gases["ch4"][MOLES] > MINIMUM_HEAT_CAPACITY)
+		var/methane_burn_rate = 0
+		var/oxygen_burn_rate = 0
+		//more methane released at higher temperatures
+		var/temperature_scale
+		if(temperature > METHANE_UPPER_TEMPERATURE)
+			temperature_scale = 1
+		else
+			temperature_scale = (temperature-METHANE_MINIMUM_BURN_TEMPERATURE)/(METHANE_UPPER_TEMPERATURE-METHANE_MINIMUM_BURN_TEMPERATURE)
+		if(temperature_scale > 0)
+			assert_gas("o2")
+			oxygen_burn_rate = OXYGEN_BURN_RATE_BASE - temperature_scale
+			if(cached_gases["o2"][MOLES] > cached_gases["ch4"][MOLES]*METHANE_OXYGEN_FULLBURN)
+				methane_burn_rate = (cached_gases["ch4"][MOLES]*temperature_scale)/METHANE_BURN_RATE_DELTA
+			else
+				methane_burn_rate = (temperature_scale*(cached_gases["o2"][MOLES]/METHANE_OXYGEN_FULLBURN))/METHANE_BURN_RATE_DELTA
+			if(methane_burn_rate > MINIMUM_HEAT_CAPACITY)
+				assert_gas("co2")
+				cached_gases["ch4"][MOLES] = QUANTIZE(cached_gases["ch4"][MOLES] - methane_burn_rate)
+				cached_gases["o2"][MOLES] = QUANTIZE(cached_gases["o2"][MOLES] - (methane_burn_rate * oxygen_burn_rate))
+				cached_gases["co2"][MOLES] += methane_burn_rate
+
+				energy_released += FIRE_METHANE_ENERGY_RELEASED * (methane_burn_rate)
+
+				fuel_burnt += (methane_burn_rate)*(1+oxygen_burn_rate)
+				garbage_collect()
+
+//Hydrogen burning
+	if(cached_gases["h2"] && cached_gases["h2"][MOLES])
+		var/burned_fuel
+
+		if(!cached_gases["o2"])
+			burned_fuel = 0
+		else if(cached_gases["o2"][MOLES] < cached_gases["h2"][MOLES])
+			burned_fuel = cached_gases["o2"][MOLES]
+			cached_gases["h2"][MOLES] -= burned_fuel
+			cached_gases["o2"][MOLES] = 0
+		else
+			burned_fuel = cached_gases["h2"][MOLES]
+			cached_gases["o2"][MOLES] -= cached_gases["h2"][MOLES]
+
+		if(burned_fuel)
+			energy_released += FIRE_CARBON_ENERGY_RELEASED * burned_fuel
+
+			assert_gas("water_vapor")
+			cached_gases["water_vapor"][MOLES] += burned_fuel
+
+			fuel_burnt += burned_fuel
+
  	//General volatile gas burn
 	if(cached_gases["v_fuel"] && cached_gases["v_fuel"][MOLES])
 		var/burned_fuel
@@ -226,6 +276,8 @@ var/list/gaslist_cache = null
 			cached_gases["co2"][MOLES] += burned_fuel
 
 			fuel_burnt += burned_fuel
+
+
 
 	//Handle plasma burning
 	if(cached_gases["plasma"] && cached_gases["plasma"][MOLES] > MINIMUM_HEAT_CAPACITY)

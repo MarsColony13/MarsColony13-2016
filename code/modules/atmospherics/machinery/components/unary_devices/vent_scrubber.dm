@@ -22,6 +22,8 @@
 	var/scrub_BZ = 0
 	var/scrub_Freon = 0
 	var/scrub_WaterVapor = 0
+	var/scrub_H2 = 0
+	var/scrub_CH4 = 0
 
 
 	var/volume_rate = 200
@@ -76,6 +78,10 @@
 			amount += idle_power_usage
 		if(scrub_WaterVapor)
 			amount += idle_power_usage
+		if(scrub_H2)
+			amount += idle_power_usage
+		if(scrub_CH4)
+			amount += idle_power_usage
 	else //scrubbing == SIPHONING
 		amount = active_power_usage
 
@@ -128,6 +134,8 @@
 		"filter_bz" = scrub_BZ,
 		"filter_freon" = scrub_Freon,
 		"filter_water_vapor" = scrub_WaterVapor,
+		"filter_h2" = scrub_H2,
+		"filter_ch4" = scrub_CH4,
 		"sigtype" = "status"
 	)
 
@@ -229,6 +237,16 @@
 				filtered_out.gases["water_vapor"][MOLES] = removed_gases["water_vapor"][MOLES]
 				removed.gases["water_vapor"][MOLES] = 0
 
+			if(scrub_H2 && removed_gases["h2"])
+				filtered_out.assert_gas("h2")
+				filtered_out.gases["h2"][MOLES] = removed_gases["h2"][MOLES]
+				removed.gases["h2"][MOLES] = 0
+
+			if(scrub_CH4 && removed_gases["ch4"])
+				filtered_out.assert_gas("ch4")
+				filtered_out.gases["ch4"][MOLES] = removed_gases["ch4"][MOLES]
+				removed.gases["ch4"][MOLES] = 0
+
 			removed.garbage_collect()
 
 			//Remix the resulting gases
@@ -318,6 +336,16 @@
 		scrub_WaterVapor = text2num(signal.data["water_vapor_scrub"])
 	if("toggle_water_vapor_scrub" in signal.data)
 		scrub_WaterVapor = !scrub_WaterVapor
+
+	if("h2_scrub" in signal.data)
+		scrub_H2 = text2num(signal.data["h2_scrub"])
+	if("toggle_h2_scrub" in signal.data)
+		scrub_H2 = !scrub_H2
+
+	if("ch4_scrub" in signal.data)
+		scrub_CH4 = text2num(signal.data["ch4_scrub"])
+	if("toggle_ch4_scrub" in signal.data)
+		scrub_CH4 = !scrub_CH4
 
 	if("init" in signal.data)
 		name = signal.data["init"]

@@ -6,7 +6,9 @@
 	initial_gas_mix = "co2=1.425;o2=0.015;n2=0.06;TEMP=203.15"//95% CO2, 1% oxygen, 4% N2, -70C, 203.15K
 	planetary_atmos = TRUE
 	baseturf = /turf/open/floor/plating/mars
-	temperature = 213.15
+	temperature = 203.15
+	turfstepsound = "step_sand"
+	heat_capacity = 100000
 	var/floor_variance = 30
 
 /turf/open/floor/plating/mars/New()
@@ -23,15 +25,18 @@
 	environment_type = "marssand"
 	icon_state = "marssand0"
 	initial_gas_mix = "co2=1.425;o2=0.015;n2=0.06;TEMP=120"//95% CO2, 1% oxygen, 4% N2, -153C, 120K
+	temperature = 120
 
 /turf/open/floor/plating/mars/polar/snow
 	name = "\proper snow"
 	desc = null
-	baseturf = /turf/open/floor/plating/mars/polar/snow
+	baseturf = /turf/open/floor/plating/mars/polar
 	initial_gas_mix = "co2=1.425;o2=0.015;n2=0.06;TEMP=120"//95% CO2, 1% oxygen, 4% N2, -153C, 120K
+	temperature = 120
 	icon_state = "snow"
 	icon = 'icons/turf/snow.dmi'
 	environment_type = "snow"
+	turfstepsound = "step_snow"
 
 /turf/open/floor/plating/mars/break_tile()
 	return
@@ -40,6 +45,9 @@
 	return
 
 /turf/open/floor/plating/mars/ex_act()
+	return
+
+/turf/open/floor/plating/mars/ratvar_act()
 	return
 
 /turf/open/floor/plating/mars/singularity_pull(S, current_size)

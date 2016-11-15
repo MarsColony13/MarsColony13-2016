@@ -92,3 +92,9 @@
 
 // Flags for reagents
 #define REAGENT_NOREACT 1
+
+//Flags for turf step sounds
+#define METALTURF		1
+#define WOODTURF		2
+#define SANDTURF		3
+#define SNOWTURF		4

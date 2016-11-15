@@ -51,8 +51,8 @@
 /obj/item/weapon/vending_refill/cola
 	machine_name = "Robust Softdrinks"
 	icon_state = "refill_cola"
-	charges = list(20, 2, 0)//of 60 standard, 6 contraband
-	init_charges = list(20, 2, 0)
+	charges = list(24, 2, 0)//of 70 standard, 6 contraband
+	init_charges = list(24, 2, 0)
 
 /obj/item/weapon/vending_refill/cigarette
 	machine_name = "ShadyCigs Deluxe"

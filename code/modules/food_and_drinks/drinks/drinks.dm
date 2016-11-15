@@ -329,3 +329,14 @@
 	desc = "A delicious mixture of 42 different flavors."
 	icon_state = "dr_gibb"
 	list_reagents = list("dr_gibb" = 30)
+
+//Plastic Bottles
+/obj/item/weapon/reagent_containers/food/drinks/plasticbottle
+	name = "plastic bottle"
+	desc = "I hope this is recyclable."
+
+/obj/item/weapon/reagent_containers/food/drinks/plasticbottle/water
+	name = "water bottle"
+	desc = "Now 100% chlorine free!"
+	icon_state = "plastic_water"
+	list_reagents = list("water" = 30)

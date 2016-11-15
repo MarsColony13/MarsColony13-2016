@@ -13,8 +13,8 @@ Head of Security
 	department_head = list("Captain")
 	department_flag = ENGSEC
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "the captain"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
@@ -74,8 +74,8 @@ Warden
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
@@ -126,15 +126,16 @@ Warden
 /*
 Detective
 */
+
 /datum/job/detective
 	title = "Detective"
 	flag = DETECTIVE
-	department_head = list("Head of Security")
+	department_head = list("Marshal")
 	department_flag = ENGSEC
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "the head of security"
+	total_positions = 0
+	spawn_positions = 0
+	supervisors = "the marshal"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 
@@ -177,14 +178,15 @@ Detective
 /*
 Security Officer
 */
+//Replaced by the sheriff
 /datum/job/officer
 	title = "Security Officer"
 	flag = OFFICER
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
 	faction = "Station"
-	total_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
-	spawn_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
+	total_positions = 0 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
+	spawn_positions = 0 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	supervisors = "the head of security, and the head of your assigned department (if applicable)"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7

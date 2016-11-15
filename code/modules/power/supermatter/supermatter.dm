@@ -24,7 +24,7 @@
 	density = 1
 	anchored = 0
 	luminosity = 4
-
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 	var/gasefficency = 0.125
 
@@ -289,7 +289,9 @@
 /obj/machinery/power/supermatter_shard/attackby(obj/item/W, mob/living/user, params)
 	if(!istype(W) || (W.flags & ABSTRACT) || !istype(user))
 		return
-	if(user.drop_item(W))
+	if(istype(W, /obj/item/weapon/wrench))//This is pretty necessary for a good engine without using tables.
+		default_unfasten_wrench(user, W, 10)
+	else if(user.drop_item(W))
 		Consume(W)
 		user.visible_message("<span class='danger'>As [user] touches \the [src] with \a [W], silence fills the room...</span>",\
 			"<span class='userdanger'>You touch \the [src] with \the [W], and everything suddenly goes silent.</span>\n<span class='notice'>\The [W] flashes into dust as you flinch away from \the [src].</span>",\

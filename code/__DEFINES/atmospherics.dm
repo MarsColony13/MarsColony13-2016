@@ -55,6 +55,7 @@
 #define FIRE_SPREAD_RADIOSITY_SCALE			0.85
 #define FIRE_CARBON_ENERGY_RELEASED			500000	//Amount of heat released per mole of burnt carbon into the tile
 #define FIRE_PLASMA_ENERGY_RELEASED			3000000	//Amount of heat released per mole of burnt plasma into the tile
+#define FIRE_METHANE_ENERGY_RELEASED		1000000	//Amount of heat released per mole of burnt methane into the tile
 #define FIRE_GROWTH_RATE					40000	//For small fires
 #define CARBON_LIFEFORM_FIRE_RESISTANCE 	200+T0C	//Resistance to fire damage
 #define CARBON_LIFEFORM_FIRE_DAMAGE			4		//Fire damage
@@ -75,6 +76,13 @@
 #define PLASMA_FUSED_COEFFICENT				0.08
 #define CARBON_CATALYST_COEFFICENT			0.01
 #define FUSION_PURITY_THRESHOLD				0.9
+	//Methane fire properties
+#define METHANE_BURN_RATE_DELTA					10
+#define METHANE_MINIMUM_BURN_TEMPERATURE		500+T0C
+#define METHANE_UPPER_TEMPERATURE				2000+T0C
+#define METHANE_MINIMUM_OXYGEN_NEEDED			2
+#define METHANE_MINIMUM_OXYGEN_METHANE_RATIO	2
+#define METHANE_OXYGEN_FULLBURN					10
 // Pressure limits.
 #define HAZARD_HIGH_PRESSURE				550		//This determins at what pressure the ultra-high pressure red icon is displayed. (This one is set as a constant)
 #define WARNING_HIGH_PRESSURE				325		//This determins when the orange pressure icon is displayed (it is 0.7 * HAZARD_HIGH_PRESSURE)

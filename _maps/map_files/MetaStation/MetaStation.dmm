@@ -16448,7 +16448,7 @@
 /obj/item/weapon/lazarus_injector,
 /obj/item/weapon/gun/energy/gun/advtaser,
 /obj/item/weapon/gun/projectile/revolver/russian,
-/obj/item/ammo_box/a357,
+/obj/item/ammo_box/sloader/a357,
 /obj/item/clothing/tie/stethoscope,
 /obj/item/weapon/book{
 	desc = "An undeniably handy book.";

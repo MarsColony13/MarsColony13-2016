@@ -303,6 +303,7 @@
 	explosion_block = 2
 	obj_integrity = 500
 	max_integrity = 500
+	damage_deflection = 30
 
 //////////////////////////////////
 /*
@@ -321,6 +322,7 @@
 	icon = 'icons/obj/doors/airlocks/abductor/abductor_airlock.dmi'
 	overlays_file = 'icons/obj/doors/airlocks/abductor/overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_abductor
+	damage_deflection = 30
 	opacity = 1
 	explosion_block = 3
 	hackProof = 1
@@ -538,3 +540,13 @@
 
 /obj/machinery/door/airlock/glass_large/narsie_act()
 	return
+
+/obj/machinery/door/airlock/glass_large/verticle
+	name = "large glass airlock"
+	icon = 'icons/obj/doors/airlocks/glass_large/glass_large_vertical.dmi'
+	overlays_file = 'icons/obj/doors/airlocks/glass_large/overlays_verticle.dmi'
+	opacity = 0
+	assemblytype = null
+	glass = 1
+	bound_width = 32
+	bound_height = 64 // 1x2

@@ -1,12 +1,44 @@
 /obj/item/projectile/bullet
 	name = "bullet"
-	icon_state = "bullet"
+	icon_state = "bullet_white"
+	color = "#FFA500"
 	damage = 60
 	damage_type = BRUTE
 	nodamage = 0
 	flag = "bullet"
 	hitsound_wall = "ricochet"
 	impact_effect_type = /obj/effect/overlay/temp/impact_effect
+
+/obj/item/projectile/bullet/c38
+	damage = 25
+
+/obj/item/projectile/bullet/c38/hollow
+	damage = 30
+	armour_penetration = -75
+
+/obj/item/projectile/bullet/c38/ap
+	damage = 20
+	armour_penetration = 75
+
+/obj/item/projectile/bullet/c38/rubber
+	damage = 5
+	stamina = 60
+
+/obj/item/projectile/bullet/c45
+	damage = 30
+
+/obj/item/projectile/bullet/c45/hollow
+	damage = 40
+	armour_penetration = -75
+
+/obj/item/projectile/bullet/c45/ap
+	color = "#6666FF"//sky blue
+	damage = 20
+	armour_penetration = 75
+
+/obj/item/projectile/bullet/c45/rubber
+	damage = 5
+	stamina = 75
 
 /obj/item/projectile/bullet/weakbullet //beanbag, heavy stamina damage
 	damage = 5
@@ -64,7 +96,6 @@
 	damage = 20
 	stamina = 65 //two round bursts from the c20r knocks people down
 
-
 /obj/item/projectile/bullet/midbullet2
 	damage = 25
 
@@ -121,6 +152,7 @@
 	weaken = 8
 	stun = 8
 	hitsound = 'sound/effects/meteorimpact.ogg'
+	color = null
 
 /obj/item/projectile/bullet/meteorshot/weak
 	damage = 10
@@ -137,6 +169,7 @@
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	icon_state = "banana"
 	range = 200
+	color = null
 
 /obj/item/projectile/bullet/honker/New()
 	..()
@@ -205,6 +238,7 @@
 	name = "syringe"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "syringeproj"
+	color = null
 
 //Piercing Syringe
 /obj/item/projectile/bullet/dart/syringe/piercing
@@ -216,6 +250,7 @@
 	damage = 5
 	damage_type = TOX
 	weaken = 5
+	color = null
 
 /obj/item/projectile/bullet/neurotoxin/on_hit(atom/target, blocked = 0)
 	if(isalien(target))

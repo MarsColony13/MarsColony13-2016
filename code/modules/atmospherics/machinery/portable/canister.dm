@@ -36,6 +36,8 @@
 		"air" = /obj/machinery/portable_atmospherics/canister/air,
 		"freon" = /obj/machinery/portable_atmospherics/canister/freon,
 		"water vapor" = /obj/machinery/portable_atmospherics/canister/water_vapor,
+		"h2" = /obj/machinery/portable_atmospherics/canister/hydrogen,
+		"ch4" = /obj/machinery/portable_atmospherics/canister/methane,
 		"caution" = /obj/machinery/portable_atmospherics/canister,
 	)
 
@@ -98,6 +100,18 @@
 	icon_state = "water_vapor"
 	gas_type = "water_vapor"
 	filled = 1
+
+/obj/machinery/portable_atmospherics/canister/hydrogen
+	name = "h2 canister"
+	desc = "Hydrogen. Flammable "
+	icon_state = "blueos"
+	gas_type = "h2"
+
+/obj/machinery/portable_atmospherics/canister/methane
+	name = "ch4 canister"
+	desc = "Methane. Efficient, burnable fuel source. Mix with two parts oxygen for best results."
+	icon_state = "brown"
+	gas_type = "ch4"
 
 /obj/machinery/portable_atmospherics/canister/New(loc, datum/gas_mixture/existing_mixture)
 	..()
@@ -321,6 +335,8 @@
 					var/n2o = air_contents.gases["n2o"]
 					var/bz = air_contents.gases["bz"]
 					var/freon = air_contents.gases["freon"]
+					var/h2 = air_contents.gases["h2"]
+					var/ch4 = air_contents.gases["ch4"]
 					if(n2o || plasma || bz || freon)
 						message_admins("[key_name_admin(usr)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[usr]'>?</A>) (<A HREF='?_src_=holder;adminplayerobservefollow=\ref[usr]'>FLW</A>) opened a canister that contains the following: (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
 						log_admin("[key_name(usr)] opened a canister that contains the following at [x], [y], [z]:")
@@ -336,6 +352,12 @@
 						if(freon)
 							log_admin("Freon")
 							message_admins("Freon")
+						if(h2)
+							log_admin("Hydrogen")
+							message_admins("Hydrogen")
+						if(ch4)
+							log_admin("Methane")
+							message_admins("Methane")
 			else
 				logmsg = "Valve was <b>closed</b> by [key_name(usr)], stopping the transfer into \the [holding || "air"].<br>"
 			investigate_log(logmsg, "atmos")

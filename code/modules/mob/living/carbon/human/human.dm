@@ -4,7 +4,8 @@
 	voice_name = "Unknown"
 	icon = 'icons/mob/human.dmi'
 	icon_state = "caucasian_m_s"
-
+	movesounds = TRUE
+	stepsound = "step_bare"
 
 
 /mob/living/carbon/human/dummy

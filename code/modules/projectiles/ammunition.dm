@@ -67,7 +67,7 @@
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
 	item_state = "syringe_kit"
-	materials = list(MAT_METAL=30000)
+	materials = list(MAT_METAL=4000)
 	throwforce = 2
 	w_class = 1
 	throw_speed = 3
@@ -78,6 +78,7 @@
 	var/multiple_sprites = 0
 	var/caliber
 	var/multiload = 1
+	var/typeflag //SPEEDLOADER or MAGAZINE, check combat.dm for other defines
 
 /obj/item/ammo_box/New()
 	..()

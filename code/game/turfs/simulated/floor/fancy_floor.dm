@@ -61,6 +61,7 @@
 	floor_tile = null
 	initial_gas_mix = "o2=22;n2=82;TEMP=180"
 	slowdown = 2
+	turfstepsound = "step_sand"
 
 
 /turf/open/floor/grass/snow/attackby(obj/item/W, mob/user, params)
@@ -75,6 +76,7 @@
 	ore_type = /obj/item/weapon/ore/glass/basalt
 	initial_gas_mix = "o2=14;n2=23;TEMP=300"
 	slowdown = 0
+	turfstepsound = "step_sand"
 
 /turf/open/floor/grass/snow/basalt/New()
 	..()
@@ -95,6 +97,7 @@
 	smooth = SMOOTH_TRUE
 	canSmoothWith = null
 	flags = NONE
+	turfstepsound = "step_shoes"
 
 /turf/open/floor/carpet/New()
 	..()

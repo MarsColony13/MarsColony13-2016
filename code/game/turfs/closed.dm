@@ -72,6 +72,16 @@
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "rock"
 
+/turf/closed/indestructible/mars
+	name = "dense rock"
+	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
+	icon = 'icons/turf/mining.dmi'
+	icon_state = "densemarsrock"
+
+/turf/closed/indestructible/mars/New()
+	icon_state = "marsrock"
+	..()
+
 /turf/closed/indestructible/rock/snow
 	name = "mountainside"
 	desc = "An extremely densely-packed rock, sheeted over with centuries worth of ice and snow."

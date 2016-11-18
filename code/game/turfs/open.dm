@@ -80,7 +80,11 @@
 	MakeSlippery(TURF_WET_PERMAFROST, 5)
 	return 1
 
-/turf/open/water_vapor_gas_act()
+/turf/open/water_vapor_gas_act(temp)
+	if(!temp)
+		return 0
+	if(temp < 373.15)//is it above the boiling point of steam
+		return 0
 	MakeSlippery(min_wet_time = 10, wet_time_to_add = 5)
 
 	for(var/mob/living/simple_animal/slime/M in src)
@@ -90,12 +94,10 @@
 	for(var/obj/effect/O in src)
 		if(is_cleanable(O))
 			qdel(O)
-/*wator vapor should not automatically put out a fire
 	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in src)
 	if(hotspot && !isspaceturf(src))
-		air.temperature = max(min(air.temperature-2000,air.temperature/2),0)
 		qdel(hotspot)
-*/
+
 	return 1
 
 /turf/open/handle_fall(mob/faller, forced)

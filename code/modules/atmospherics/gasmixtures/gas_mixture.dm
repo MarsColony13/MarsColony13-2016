@@ -188,7 +188,7 @@ var/list/gaslist_cache = null
 
 		if(cached_gases["water_vapor"])
 			if(cached_gases["water_vapor"][MOLES] >= MOLES_PLASMA_VISIBLE)
-				if(holder.water_vapor_gas_act())
+				if(holder.water_vapor_gas_act(temperature))
 					cached_gases["water_vapor"][MOLES] -= MOLES_PLASMA_VISIBLE
 
 	fuel_burnt = 0

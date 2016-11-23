@@ -39,6 +39,11 @@ var/list/hardcoded_gases = list("o2","n2","co2","plasma") //the main four gases,
 	specific_heat = 20
 	name = "Nitrogen"
 
+/datum/gas/argon
+	id = "ar"
+	specific_heat = 20
+	name = "Argon"
+
 /datum/gas/carbon_dioxide //what the fuck is this?
 	id = "co2"
 	specific_heat = 30

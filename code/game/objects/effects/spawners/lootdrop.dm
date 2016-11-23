@@ -168,3 +168,28 @@
 				/obj/structure/closet/crate/secure/loot = 20,
 				"" = 80
 				)
+
+/obj/effect/spawner/lootdrop/food_showcase
+	name = "food showcase spawner"
+	lootdoubles = 0
+
+	loot = list(
+				/obj/item/weapon/reagent_containers/food/snacks/baguette,
+				/obj/item/weapon/reagent_containers/food/snacks/chowmein,
+				/obj/item/weapon/reagent_containers/food/snacks/meatballspaghetti,
+				/obj/item/weapon/reagent_containers/food/snacks/honeybun,
+				/obj/item/weapon/reagent_containers/food/snacks/waffles,
+				/obj/item/weapon/reagent_containers/food/snacks/muffin/berry,
+				/obj/item/weapon/reagent_containers/food/snacks/sandwich,
+				/obj/item/weapon/reagent_containers/food/snacks/eggwrap,
+				/obj/item/weapon/reagent_containers/food/snacks/cheesyburrito,
+				/obj/item/weapon/reagent_containers/food/snacks/sundae,
+				/obj/item/weapon/reagent_containers/food/snacks/cheesynachos,
+				/obj/item/weapon/reagent_containers/food/snacks/hotcrossbun,
+				/obj/item/weapon/reagent_containers/food/snacks/loadedbakedpotato,
+				/obj/item/weapon/reagent_containers/food/snacks/mint,
+				/obj/item/weapon/reagent_containers/food/snacks/burrito,
+				/obj/item/weapon/reagent_containers/food/snacks/pumpkinpieslice,
+				/obj/item/weapon/reagent_containers/food/snacks/omelette,
+				/obj/item/weapon/reagent_containers/food/snacks/benedict
+				)

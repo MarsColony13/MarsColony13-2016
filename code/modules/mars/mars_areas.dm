@@ -66,8 +66,56 @@
 						 'sound/voice/lowHiss4.ogg')
 	valid_territory = 0
 
+/area/mars/colony/maint/medbay
+	name = "Medbay Maintenance"
+	icon_state = "maintmed"
+
+/area/mars/colony/maint/hab
+	name = "Habitation Zone Maintenance"
+	icon_state = "mainthab"
+
+//Medbay
+/area/mars/colony/medbay
+	name = "Medbay"
+	icon_state = "medbay"
+
+/area/mars/colony/medbay/cmo
+	name = "Chief Medical Officer's office"
+	icon_state = "CMO"
+
+/area/mars/colony/medbay/main
+	name = "Medbay"
+	icon_state = "medbay"
+
+/area/mars/colony/medbay/chemistry
+	name = "Chemistry"
+	icon_state = "chem"
+
+/area/mars/colony/medbay/virology
+	name = "Virology"
+	icon_state = "virology"
+
+/area/mars/colony/medbay/morgue
+	name = "Morgue"
+	icon_state = "morgue"
+	ambientsounds = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg')
+
+/area/mars/colony/medbay/exam_rooms
+	name = "Exam Rooms"
+	icon_state = "exam_room"
+
+/area/mars/colony/medbay/er
+	name = "Emergency Room"
+	icon_state = "medbay2"
+
+/area/mars/colony/medbay/storage
+	name = "Medbay Storage"
+	icon_state = "medbay3"
+
+//Mining Z level areas
 /area/mars/mine
 	name = "Vastitas Borealis" //Northern Waste in latin; real location on Mars.
+	icon_state = "mine"
 
 /area/mars/mine/outdoors
 	icon_state = "explored"
@@ -79,7 +127,7 @@
 	power_equip = 0
 	power_light = 0
 	outdoors = 1
-	ambientsounds = list('sound/ambience/ambimine.ogg')
+	ambientsounds = list('sound/ambience/ambimars1.ogg')
 
 /area/mars/mine/outdoors/unexplored
 	icon_state = "unexplored"
@@ -91,9 +139,54 @@
 	power_equip = 0
 	power_light = 0
 	outdoors = 1
-	ambientsounds = list('sound/ambience/ambimine.ogg')
+	ambientsounds = list('sound/ambience/ambimars1.ogg')
 	flags = NONE
 
+/area/mars/mine/outpost/lobby
+	name = "Mining Station"
+
+/area/mars/mine/outpost/storage
+	name = "Mining Station Storage"
+
+/area/mars/mine/outpost/production
+	name = "Mining Station Starboard Wing"
+	icon_state = "mining_production"
+
+/area/mars/mine/outpost/abandoned
+	name = "Abandoned Mining Station"
+
+/area/mars/mine/outpost/living_quarters
+	name = "Mining Station Port Wing"
+	icon_state = "mining_living"
+
+/area/mars/mine/outpost/eva
+	name = "Mining Station EVA"
+	icon_state = "mining_eva"
+
+/area/mars/mine/outpost/maintenance
+	name = "Mining Station Communications"
+
+/area/mars/mine/outpost/cafeteria
+	name = "Mining station Cafeteria"
+
+/area/mars/mine/outpost/hydroponics
+	name = "Mining station Hydroponics"
+
+/area/mars/mine/outpost/sleeper
+	name = "Mining station Emergency Sleeper"
+
+/area/mars/mine/outpost/north_outpost
+	name = "North Mining Outpost"
+
+/area/mars/mine/outpost/west_outpost
+	name = "West Mining Outpost"
+
+/area/mars/mine/outpost/laborcamp
+	name = "Labor Camp"
+
+/area/mars/mine/outpost/laborcamp/security
+	name = "Labor Camp Security"
+	icon_state = "security"
 /*
 //reference
 /area/mine

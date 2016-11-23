@@ -302,7 +302,7 @@
 	dismantle_cooldown = 0
 
 //argument is so world start can clear out any turf differences quickly.
-/datum/excited_group/proc/self_breakdown(space_is_all_consuming = 0)
+/datum/excited_group/proc/self_breakdown(space_is_all_consuming = 0, mars_is_all_consuming = 1)
 	var/datum/gas_mixture/A = new
 
 	//make local for sanic speed
@@ -317,6 +317,10 @@
 			space_in_group = 1
 			qdel(A)
 			A = new/datum/gas_mixture/space()
+		else if(istype(T, /turf/open/floor/plating/mars) && mars_is_all_consuming && !mars_in_group)
+			mars_in_group = 1
+			qdel(A)
+			A = new/datum/gas_mixture/mars()
 		A.merge(T.air)
 
 	for(var/id in A_gases)

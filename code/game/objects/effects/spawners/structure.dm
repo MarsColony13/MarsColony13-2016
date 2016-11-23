@@ -31,3 +31,11 @@ again.
 						/obj/structure/grille,
 						/obj/structure/window/reinforced/fulltile
 						)
+
+/obj/effect/spawner/structure/window/shuttle
+	name = "shuttle window spawner"
+	icon_state = "swindow_spawner"
+	spawn_list = 	list(
+						/obj/structure/grille,
+						/obj/structure/window/shuttle
+						)

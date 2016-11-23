@@ -25,7 +25,7 @@
 
 
 /turf/closed/indestructible/splashscreen
-	name = "Space Station 13"
+	name = "Mars Colony 13"
 	icon = 'icons/misc/fullscreen.dmi'
 	icon_state = "title"
 	layer = FLY_LAYER
@@ -92,6 +92,10 @@
 	name = "iced rock"
 	desc = "Extremely densely-packed sheets of ice and rock, forged over the years of the harsh cold."
 	icon = 'icons/turf/walls.dmi'
+	icon_state = "denseicerock"
+
+/turf/closed/indestructible/rock/snow/ice/New()
+	..()
 	icon_state = "icerock"
 
 /turf/closed/indestructible/paper

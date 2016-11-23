@@ -560,3 +560,5 @@ var/global/list/ghost_others_options = list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 #define NUKE_NEAR_MISS 1
 #define NUKE_MISS_STATION 2
 #define NUKE_SYNDICATE_BASE 3
+
+#define RULES_FILE "config/rules.html"

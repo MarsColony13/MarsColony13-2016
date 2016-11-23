@@ -18,7 +18,7 @@
 	if(istype(AM))
 		playsound(src,sound,50,1)
 
-/turf/open/Initalize_Atmos(times_fired)
+/turf/open/Initalize_Atmos(times_fired)//who fucked this spelling up
 	excited = 0
 	update_visuals()
 
@@ -32,6 +32,9 @@
 	for(var/direction in cardinal)
 		var/turf/open/enemy_tile = get_step(src, direction)
 		if(!istype(enemy_tile))
+			atmos_adjacent_turfs -= enemy_tile
+			continue
+		if(enemy_tile.planetary_atmos)//So we don't have 50k planet turfs sharing air with each other.
 			atmos_adjacent_turfs -= enemy_tile
 			continue
 		var/datum/gas_mixture/enemy_air = enemy_tile.return_air()

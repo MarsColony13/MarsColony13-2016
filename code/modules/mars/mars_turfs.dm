@@ -11,6 +11,9 @@
 	heat_capacity = 100000
 	var/floor_variance = 30
 
+/turf/open/floor/plating/mars/Initalize_Atmos(times_fired)
+	return
+
 /turf/open/floor/plating/mars/New()
 	var/proper_name = name
 	..()
@@ -65,7 +68,7 @@
 
 /turf/closed/mineral/ice//Used for ice mining on Mars
 	name = "\proper ice"
-	desc = "Extremely cold water ice. This is the good stuff right here."
+	desc = "Extremely cold water and carbon dioxide ice. This is the good stuff right here."
 	icon_state = "icerock"
 	environment_type = "ice"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'

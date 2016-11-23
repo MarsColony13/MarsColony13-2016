@@ -3,7 +3,7 @@
 
 /obj/machinery/conveyor
 	icon = 'icons/obj/recycling.dmi'
-	icon_state = "conveyor0"
+	icon_state = "conveyor-dir"//this icon helps mappers know which way conveyor belts are facing
 	name = "conveyor belt"
 	desc = "A conveyor belt."
 	anchored = 1
@@ -26,6 +26,7 @@
 
 /obj/machinery/conveyor/auto/New(loc, newdir)
 	..(loc, newdir)
+	icon_state = "conveyor0"
 	operating = 1
 	update_move_direction()
 

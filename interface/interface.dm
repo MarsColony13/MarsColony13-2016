@@ -11,6 +11,7 @@
 		src << "<span class='danger'>The wiki URL is not set in the server configuration.</span>"
 	return
 
+
 /client/verb/forum()
 	set name = "forum"
 	set desc = "Visit the forum."
@@ -24,16 +25,10 @@
 	return
 
 /client/verb/rules()
-	set name = "rules"
+	set name = "Rules"
 	set desc = "Show Server Rules."
 	set hidden = 1
-	if(config.rulesurl)
-		if(alert("This will open the rules in your browser. Are you sure?",,"Yes","No")=="No")
-			return
-		src << link(config.rulesurl)
-	else
-		src << "<span class='danger'>The rules URL is not set in the server configuration.</span>"
-	return
+	src << browse(file(RULES_FILE), "window=rules;size=480x320")
 
 /client/verb/github()
 	set name = "github"

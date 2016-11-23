@@ -37,6 +37,12 @@
 	icon = 'icons/obj/cloning.dmi'
 	icon_state = "pod_g"
 
+/obj/structure/showcase/beertap
+	name = "beer tap showcase"
+	desc = "A tap that pours the good stuff. Too bad it's just a showcase."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "booze_dispenser"
+
 //Deconstructing
 //Showcases can be any sprite, so it makes sense that they can't be constructed.
 //However if a player wants to move an existing showcase or remove one, this is for that.

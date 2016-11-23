@@ -4,6 +4,7 @@
 	icon_state = "cell-off"
 	density = 1
 	anchored = 1
+	layer = 3.2
 	obj_integrity = 350
 	max_integrity = 350
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 100, bomb = 0, bio = 100, rad = 100, fire = 30, acid = 30)

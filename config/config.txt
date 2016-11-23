@@ -158,6 +158,9 @@ WIKIURL http://www.tgstation13.org/wiki
 ##Github address
 GITHUBURL https://github.com/MarsColony13/MarsColony13
 
+##Discord invite link
+GITHUBURL https://discord.gg/mh7zhRv
+
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
 # BANAPPEALS http://justanotherday.example.com
 

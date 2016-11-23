@@ -109,7 +109,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/trophy/gold_cup
 	name = "gold cup"
-	desc = "You're winner!"
+	desc = "You're a winner!"
 	icon_state = "golden_cup"
 	w_class = 4
 	force = 14

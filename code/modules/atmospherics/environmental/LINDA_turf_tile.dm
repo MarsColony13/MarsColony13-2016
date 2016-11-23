@@ -310,6 +310,7 @@
 	var/list/turf_list = src.turf_list
 	var/turflen = turf_list.len
 	var/space_in_group = 0
+	var/mars_in_group = 0
 
 	for(var/t in turf_list)
 		var/turf/open/T = t

@@ -74,6 +74,10 @@
 	name = "Habitation Zone Maintenance"
 	icon_state = "mainthab"
 
+/area/mars/colony/maint/cargo
+	name = "Cargo Maintenance"
+	icon_state = "maintcargo"
+
 //Medbay
 /area/mars/colony/medbay
 	name = "Medbay"
@@ -111,6 +115,87 @@
 /area/mars/colony/medbay/storage
 	name = "Medbay Storage"
 	icon_state = "medbay3"
+
+//Cargo
+/area/mars/colony/cargo/office
+	name = "Cargo Office"
+	icon_state = "quartoffice"
+
+/area/mars/colony/cargo/storage
+	name = "Cargo Bay"
+	icon_state = "quartstorage"
+
+/area/mars/colony/cargo/qm
+	name = "Quartermaster's Office"
+	icon_state = "quart"
+
+/area/mars/colony/cargo/botbay
+	name = "Mulebot Garage"
+	icon_state = "yellow"
+
+/area/mars/colony/cargo/deliveryroom
+	name = "Mailroom"
+	icon_state = "green"
+
+//Janitorial Closet(s)
+/area/mars/colony/janitor
+	name = "Custodial Closet"
+	icon_state = "janitor"
+	flags = NONE
+
+//Hydroponics
+/area/mars/colony/hydroponics
+	name = "Hydroponics"
+	icon_state = "hydro"
+
+//Engineering
+/area/mars/colony/tcomms/control
+	name = "Telecommunications Control Room"
+	icon_state = "tcomsatcomp"
+
+/area/mars/colony/tcomms/server
+	name = "Telecommunications Server Room"
+	icon_state = "tcomsatcham"
+
+/area/mars/colony/engine
+	ambientsounds = list('sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg','sound/ambience/ambisin3.ogg','sound/ambience/ambisin4.ogg')
+
+/area/mars/colony/engine/smes
+/area/mars/colony/engine/smes/north
+/area/mars/colony/engine/smes/south
+/area/mars/colony/engine/smes/east
+/area/mars/colony/engine/smes/west
+	name = "South Power Stepdown"
+	icon_state = "engine_smes"
+
+/area/mars/colony/engine/engineering
+	name = "Engineering"
+	icon_state = "engine"
+
+/area/mars/colony/engine/foyer
+	name = "Engineering Foyer"
+	icon_state = "engine"
+
+/area/mars/colony/engine/chiefs_office
+	name = "Chief Engineer's office"
+	icon_state = "engine_control"
+
+/area/mars/colony/engine/secure_construction
+	name = "Secure Construction Area"
+	icon_state = "engine"
+
+//Mining(Colony-side)
+/area/mars/colony/mining/dock
+	name = "Mining Dock"
+	icon_state = "mining"
+
+/area/mars/colony/mining/storage
+	name = "Mining Storage"
+	icon_state = "green"
+
+/area/mars/colony/mining/storage
+	name = "Mining Storage"
+	icon_state = "green"
 
 //Mining Z level areas
 /area/mars/mine

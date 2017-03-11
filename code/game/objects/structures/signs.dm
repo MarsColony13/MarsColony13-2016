@@ -158,6 +158,11 @@
 	desc = "A warning sign which reads 'HARD VACUUM AHEAD'"
 	icon_state = "space"
 
+/obj/structure/sign/airlock
+	name = "\improper AIRLOCK"
+	desc = "A warning sign which reads 'AIRLOCK'. Safety instructions indicate that pressure resistant equipment and/or internal oxygen supplies may be required when moving through."
+	icon_state = "airlock"
+
 /obj/structure/sign/deathsposal
 	name = "\improper DISPOSAL: LEADS TO SPACE"
 	desc = "A warning sign which reads 'DISPOSAL: LEADS TO SPACE'"
@@ -264,5 +269,17 @@
 	name = "escape arm"
 	desc = "A direction sign, pointing out which way the escape shuttle dock is."
 	icon_state = "direction_evac"
+
+/obj/structure/sign/letter
+	name = "letter sign"
+	desc = "A sign in the shape of a letter"
+	icon = 'icons/misc/alphabet.dmi'
+	icon_state = "a"
+
+/obj/structure/sign/letter/New()
+	if(icon_state && istext(icon_state))
+		name = "\improper [uppertext(icon_state)] sign"
+		desc = "A sign in the shape \an [uppertext(icon_state)]."
+	..()
 
 
